@@ -1,6 +1,7 @@
 @use '../../styles/partials/mixin' as *;
 @use '../../styles/partials/colors' as *;
 
+
 .item{
     display: flex;
     border-top: $cloud .0625rem solid;
@@ -16,19 +17,17 @@
             display:flex;
             flex-direction: column;
             padding-bottom: .5rem;
-            gap: .3rem;
-            
 
             &__name{
                 color: $instock-indigo;
             }
-
         }
         &-adress{
             display:flex;
             flex-direction: column;
-            padding-bottom: .5rem;
-            gap: .3rem;
+            padding-top: .7rem;
+            padding-bottom: .7rem;
+            gap: .6rem;
 
         }
     }
@@ -43,18 +42,31 @@
             display:flex;
             flex-direction: column;
             padding-bottom: .5rem;
-            gap: .3rem;
+            gap: .6rem;
 
         }
         &-contact{
             display:flex;
             flex-direction: column;
+            padding-top: .7rem;
             padding-bottom: .5rem;
-            gap: .3rem;
+            gap: .6rem;
         }
         &-update{
             align-self: flex-end;
         }
 
+    }
+}
+
+.logo{
+    width: 1.5rem;
+    height: 1.5rem;
+    padding-top: .85rem;
+}
+.headings{
+    color: $slate;
+    @include tablet{
+        display: none;
     }
 }
