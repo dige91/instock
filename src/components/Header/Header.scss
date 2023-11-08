@@ -1,7 +1,7 @@
-@use "../../../styles/partials/colors" as *;
-@use "../../../styles/partials/mixin" as *;
-@use "../../../styles/partials/variables" as *;
-@use "../../../styles/partials/typography" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixin" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
 
 .navigation {
     display: flex;

@@ -2,7 +2,7 @@ import './Warehouse.scss';
 import '../../App.scss';
 import WarehouseItem from '../../components/WarehouseItem/WarehouseItem';
 import { Link } from 'react-router-dom';
-import sort from '../../assets/Icons/sort-24px.svg';
+// import sort from '../../assets/Icons/sort-24px.svg';
 
 const warehouses = [
     {
