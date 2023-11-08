@@ -1,5 +1,6 @@
-@use "./variables";
-@use "./colors";
+@use "./colors" as *;
+@use "./mixin" as *;
+@use "./variables" as *;
 
 
 @font-face {
