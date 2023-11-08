@@ -1,8 +1,8 @@
 import './WarehouseItem.scss';
 import '../../App.scss';
 // import arrow from '../../assets/Icons/chevron_right-24px.svg';
-import del from '../../assets/Icons/delete_outline-24px.svg';
-import edit from '../../assets/Icons/edit-24px.svg';
+import del from '../../assets/icons/delete_outline-24px.svg';
+import edit from '../../assets/icons/edit-24px.svg';
 
 const WarehouseItem = ({ warehouse }) => {
     return (

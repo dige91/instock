@@ -1,4 +1,4 @@
-import Logo from "../../../assets/logo/InStock-Logo_1x.png";
+import Logo from "../../assets/logo/InStock-Logo_1x.png";
 import "./Header.scss";
 import { Link } from "react-router-dom";
 
