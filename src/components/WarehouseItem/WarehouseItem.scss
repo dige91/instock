@@ -1,0 +1,54 @@
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/colors' as *;
+
+.item{
+    display: flex;
+    border-top: $cloud .0625rem solid;
+    background-color: $light-grey;
+    align-items:baseline;
+    justify-content: space-between;
+    padding: 1rem 5rem;
+    &__left{
+        width: 50%;
+
+        &-warehouse{
+            display:flex;
+            flex-direction: column;
+            padding-bottom: .5rem;
+            gap: .3rem;
+
+        }
+        &-adress{
+            display:flex;
+            flex-direction: column;
+            padding-bottom: .5rem;
+            gap: .3rem;
+
+        }
+    }
+
+    &__right{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        &-name{
+            display:flex;
+            flex-direction: column;
+            padding-bottom: .5rem;
+            gap: .3rem;
+
+        }
+        &-contact{
+            display:flex;
+            flex-direction: column;
+            padding-bottom: .5rem;
+            gap: .3rem;
+        }
+        &-update{
+            align-self: flex-end;
+        }
+
+    }
+}
