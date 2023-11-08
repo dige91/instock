@@ -1,0 +1,18 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixins' as *;
+
+
+.button {
+    height:2.25;
+    width: 100%;
+    color: $white;
+    background-color: $instock-indigo ;
+
+    @include tablet {
+        padding: 0 1rem
+    }
+
+    &__image{
+        margin-right: .25rem;
+    }
+}
