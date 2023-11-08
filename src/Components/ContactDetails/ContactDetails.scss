@@ -1,0 +1,29 @@
+@use '../../styles/partials/mixin' as * ;
+@use '../../styles/partials/colors' as *;
+
+.contact{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+        width:50%;
+
+    }
+    
+    &__input{
+        height:2.25rem;
+        width: 100%;
+        border-radius: 1.25rem;
+        padding: 0 1rem;
+        border: none;
+        border:1px solid $cloud;
+
+        @include tablet {
+            height: 2.375rem;
+        }
+        &::placeholder {
+          color:  $instock-black;
+        }
+    }
+    }

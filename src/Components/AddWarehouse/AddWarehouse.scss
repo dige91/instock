@@ -1,0 +1,28 @@
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/colors' as *;
+
+.form{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+
+    &__input-container{
+
+        @include tablet {
+            display: flex;
+        }
+        
+    }
+
+
+    &__button-container{
+
+        background-color: $light-grey;
+        @include tablet {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 2.25rem;
+        }
+        
+    }
+}
