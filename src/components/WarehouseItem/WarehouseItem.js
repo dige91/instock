@@ -36,10 +36,10 @@ const WarehouseItem = ({ warehouse }) => {
 
                 <img className="item__right-update" src={edit} alt="edit icon"></img>
             </div>
-            {/* <div className="item__icons">
-                <img className="item__icons-delete" src={del} alt="delete icon"></img>
-                <img className="item__icons-update" src={edit} alt="edit icon"></img>
-            </div> */}
+            <div className="item__icons2">
+                <img className="item__icons2-delete" src={del} alt="delete icon"></img>
+                <img className="item__icons2-update" src={edit} alt="edit icon"></img>
+            </div>
         </div>
         </>
     )
