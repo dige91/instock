@@ -116,7 +116,6 @@ const Warehouse = () => {
                 <WarehouseItem key={warehouse.id} warehouse={warehouse} />
             ))}
         </div>
-        <AddWarehouse />
 
         </>
         
