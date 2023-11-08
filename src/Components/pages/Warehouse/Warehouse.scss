@@ -1,0 +1,18 @@
+@use '../../../styles/partials/mixin' as *;
+
+.warehouse{
+
+    &__header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include tablet{
+            flex-direction: row;
+        }
+
+        &-title{
+            color: green;
+        }
+    }
+}
