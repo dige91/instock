@@ -1,6 +1,6 @@
-@use "./colors";
-@use "./mixin";
-@use "./variables";
+@use "./colors" as *;
+@use "./mixin" as *;
+@use "./variables" as *;
 
 
 @font-face {
@@ -45,5 +45,5 @@ h4 {
     font-family: "Titillium Bold";
     font-size: 0.688rem;
     line-height: 1rem;
-    color: #5c667e;
+    color: $slate;
 }
