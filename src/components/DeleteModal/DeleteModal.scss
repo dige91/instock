@@ -7,7 +7,13 @@
      background-color: $light-grey;
      width: 100vw;
      height: 100vh;
-     position: fixed;
+     padding-top: 5rem;
+     top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      position: fixed;
+      background: rgba(49,49,49,0.8);
      @include tablet{
       top: 0;
       right: 0;
@@ -17,6 +23,10 @@
       background: rgba(49,49,49,0.8);
       padding-top: 11rem;
       padding-left: 2rem;
+      @include desktop{
+         display: flex;
+         justify-content: center;
+      }
      }
       &-content{
       width: 80vw;
@@ -30,6 +40,10 @@
       padding: 1rem;
       @include tablet{
          height: 15vh;
+      }
+      @include desktop{
+         width: 55vw;
+         height: 10vh;
       }
       &-top{
          @include tablet{
@@ -45,10 +59,17 @@
                left: 32rem;
            
             }
+            @include desktop{
+               width: 2vw;
+               left: 37rem;
+            }
          }
          &-header{
             font-size: 1.5rem;
             padding-bottom: .5rem;
+            @include desktop{
+               font-size: 2rem;
+            }
          }
          &-confirm{
             font-size: .7rem;
@@ -56,7 +77,13 @@
             color: $instock-black;
             @include tablet{
                width: 68%;
+               @include desktop{
+                  font-size: 1rem;
+                  line-height: 1.5rem;
+                  padding-top: 1rem;
+               }
             }
+            
          }
       }
       &-buttons{
@@ -77,6 +104,9 @@
             @include tablet{
                width: 10vw;
             }
+            @include desktop{
+               width: 7vw;
+            }
          
          }
          &-delete{
@@ -90,6 +120,9 @@
             border: none;
             @include tablet{
                width: 10vw;
+            }
+            @include desktop{
+               width: 7vw;
             }
          }
    } 
