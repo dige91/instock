@@ -21,7 +21,7 @@ const DeleteModal = () => {
                 <img onClick={toggleModal} className="deletemodal__overlay-content-top-close" src={Close}/>
             <h2 className="deletemodal__overlay-content-top-header">Delete Washington warehouse? </h2>
             <p className="deletemodal__overlay-content-top-confirm">
-                Please confirm that youd like to delete the<br/> Washington warehouse from the list of warehouses.
+                Please confirm that youd like to delete the Washington warehouse from the list of warehouses.
                  You wont be able to undo this action</p>
                 </div>
             <div className="deletemodal__overlay-content-buttons">

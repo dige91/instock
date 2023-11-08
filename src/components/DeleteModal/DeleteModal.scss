@@ -8,6 +8,16 @@
      width: 100vw;
      height: 100vh;
      position: fixed;
+     @include tablet{
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      position: fixed;
+      background: rgba(49,49,49,0.8);
+      padding-top: 11rem;
+      padding-left: 2rem;
+     }
       &-content{
       width: 80vw;
       height: 60vh;
@@ -18,12 +28,23 @@
       flex-direction: column;
       justify-content: space-between;
       padding: 1rem;
+      @include tablet{
+         height: 15vh;
+      }
       &-top{
+         @include tablet{
+            position: relative;
+            left: 3rem;
+         }
          &-close{
             width: 4vw;
             position: relative;
             left: 15rem;
-        
+            @include tablet{
+               width: 3vw;
+               left: 32rem;
+           
+            }
          }
          &-header{
             font-size: 1.5rem;
@@ -33,12 +54,19 @@
             font-size: .7rem;
             line-height: 1.3rem;
             color: $instock-black;
+            @include tablet{
+               width: 68%;
+            }
          }
       }
       &-buttons{
          display: flex;
          flex-direction: row;
          justify-content: space-around;
+         @include tablet{
+            flex-direction: row;
+            justify-content: flex-end;
+         }
          &-cancel{
             height: 2.25rem;
             padding: 0rem 1rem;
@@ -46,6 +74,9 @@
             width: 35vw;
             background-color: $white;
             border-color: $cloud;
+            @include tablet{
+               width: 10vw;
+            }
          
          }
          &-delete{
@@ -57,6 +88,9 @@
             border-radius: 1.125rem;
             border-color: $red;
             border: none;
+            @include tablet{
+               width: 10vw;
+            }
          }
    } 
 }
