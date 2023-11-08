@@ -2,6 +2,8 @@ import './Warehouse.scss';
 import '../../App.scss';
 import WarehouseItem from '../WarehouseItem/WarehouseItem';
 import { Link } from 'react-router-dom';
+import sort from '../../assets/Icons/sort-24px.svg';
+
 const warehouses = [
     {
         id: 1,
@@ -95,7 +97,6 @@ const warehouses = [
 
 const Warehouse = () => {
     return (
-
         <div className="warehouses">
             <div className="warehouses__header">
                 <h1 className="warehouses__header-title">Warehouses</h1>
