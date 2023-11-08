@@ -1,7 +1,6 @@
 import './Warehouse.scss';
 import '../../App.scss';
 import { Link } from 'react-router-dom';
-// import search from '../../../assets/Icons/search-24px.svg';
 
 const Warehouse = () => {
     return (
