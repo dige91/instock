@@ -1,6 +1,7 @@
 @use '../../styles/partials/mixin' as *;
 @use '../../styles/partials/colors' as *;
 
+
 .item{
     display: flex;
     border-top: $cloud .0625rem solid;
@@ -62,4 +63,10 @@
     width: 1.5rem;
     height: 1.5rem;
     padding-top: .85rem;
+}
+.headings{
+    color: $slate;
+    @include tablet{
+        display: none;
+    }
 }

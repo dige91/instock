@@ -2,7 +2,7 @@ import './Warehouse.scss';
 import '../../App.scss';
 import WarehouseItem from '../../components/WarehouseItem/WarehouseItem';
 import { Link } from 'react-router-dom';
-// import sort from '../../assets/Icons/sort-24px.svg';
+import sort from '../../assets/icons/sort-24px.svg';
 
 const warehouses = [
     {
@@ -97,23 +97,31 @@ const warehouses = [
 
 const Warehouse = () => {
     return (
-        <div className="warehouses">
-            <div className="warehouses__header">
-                <h1 className="warehouses__header-title">Warehouses</h1>
-                <div className="warehouses__header-container">
-                    <form className="warehouses__header-form">
-                        <input type="search" name="search" className="warehouses__header-form-search" placeholder="Search..." />
-                        <Link to="#">
-                            <button className="warehouses__header-form-button">+ Add New Warehouse</button>
-                        </Link>
-                    </form>
+        <>
+            <div className="warehouses">
+                <div className="warehouses__header">
+                    <h1 className="warehouses__header-title">Warehouses</h1>
+                    <div className="warehouses__header-container">
+                        <form className="warehouses__header-form">
+                            <input type="search" name="search" className="warehouses__header-form-search" placeholder="Search..." />
+                            <Link to="#">
+                                <button className="warehouses__header-form-button">+ Add New Warehouse</button>
+                            </Link>
+                        </form>
+                    </div>
                 </div>
+                <div className="warehouses__tablet">
+                    <div className='warehouses__tablet-header'>WAREHOUSE <img className='logo' src={sort} alt="sort arrows"></img></div>
+                    <div className='warehouses__tablet-header'>ADDRESS <img className='logo' src={sort} alt="sort arrows"></img></div>
+                    <div className='warehouses__tablet-header'>CONTACT NAME<img className='logo' src={sort} alt="sort arrows"></img></div>
+                    <div className='warehouses__tablet-header'>CONTACT INFORMATION <img className='logo' src={sort} alt="sort arrows"></img></div>
+                    <div className='warehouses__tablet-header'>ACTIONS</div>
+                </div>
+                {warehouses.map((warehouse) => (
+                    <WarehouseItem key={warehouse.id} warehouse={warehouse} />
+                ))}
             </div>
-            {warehouses.map((warehouse) => (
-                <WarehouseItem key={warehouse.id} warehouse={warehouse} />
-            ))}
-        </div>
-
+        </>
     );
 }
 
