@@ -1,0 +1,65 @@
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/typography' as *;
+ 
+ .deletemodal{
+   &__overlay{
+     background-color: $light-grey;
+     width: 100vw;
+     height: 100vh;
+     position: fixed;
+      &-content{
+      width: 80vw;
+      height: 60vh;
+      position: relative;
+      background-color: #ffffff;
+      left: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem;
+      &-top{
+         &-close{
+            width: 4vw;
+            position: relative;
+            left: 15rem;
+        
+         }
+         &-header{
+            font-size: 1.5rem;
+            padding-bottom: .5rem;
+         }
+         &-confirm{
+            font-size: .7rem;
+            line-height: 1.3rem;
+            color: $instock-black;
+         }
+      }
+      &-buttons{
+         display: flex;
+         flex-direction: row;
+         justify-content: space-around;
+         &-cancel{
+            height: 2.25rem;
+            padding: 0rem 1rem;
+            border-radius: 1.125rem;
+            width: 35vw;
+            background-color: $white;
+            border-color: $cloud;
+         
+         }
+         &-delete{
+            height: 2.25rem;
+            width: 35vw;
+            padding: 0rem 1rem;
+            color: $white;
+            background-color: $red;
+            border-radius: 1.125rem;
+            border-color: $red;
+            border: none;
+         }
+   } 
+}
+}
+ }
+   

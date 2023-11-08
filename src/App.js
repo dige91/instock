@@ -3,6 +3,7 @@ import './App.scss';
 import Inventory from './pages/Inventory/Inventory';
 import Warehouse from './pages/Warehouse/Warehouse';
 import Header from './components/Header/Header';
+import DeleteModal from './components/DeleteModal/DeleteModal';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path= '/inventory' element={<Inventory/>} />
         </Routes>
       </BrowserRouter>
+      <DeleteModal/>
     </div>
   );
 }
