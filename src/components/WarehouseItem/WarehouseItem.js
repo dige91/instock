@@ -1,6 +1,6 @@
 import './WarehouseItem.scss';
 import '../../App.scss';
-// import arrow from '../../assets/Icons/chevron_right-24px.svg';
+import chevron from '../../assets/icons/chevron_right-24px.svg';
 import del from '../../assets/icons/delete_outline-24px.svg';
 import edit from '../../assets/icons/edit-24px.svg';
 
@@ -11,7 +11,8 @@ const WarehouseItem = ({ warehouse }) => {
             <div className="item__left">
                 <div className="item__left-warehouse">
                     <h4 className='headings'>WAREHOUSE</h4>
-                    <div className='item__left-warehouse__name'>{warehouse.warehouse_name}</div>
+                    <div className='item__left-warehouse__name'>{warehouse.warehouse_name}
+                        <img className='logo' src={chevron} alt="chevron"></img></div>
 
                 </div>
                 <div className="item__left-adress">

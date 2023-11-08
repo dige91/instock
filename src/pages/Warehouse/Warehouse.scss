@@ -5,6 +5,14 @@ input {
     font-family: 'Titillium Web';
 }
 
+.tablet-header {
+    display: none;
+
+    @include tablet {
+        display: flex;
+    }
+}
+
 .warehouses {
     position: relative;
     width: stretch;
@@ -116,11 +124,28 @@ input {
             }
         }
     }
+
+    &__tablet {
+        display: none;
+
+        @include tablet {
+            padding: .5rem 1.5rem 0.7rem 1.5rem;
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            background-color: $light-grey;
+
+            &-header{
+                font-size: .65rem;
+                color: $slate;
+            }
+        }
+    }
 }
 
 button {
     font-family: 'Titillium Web';
-    
+
     &:hover {
         cursor: pointer;
     }
