@@ -1,18 +1,64 @@
 @use '../../../styles/partials/mixin' as *;
+@use '../../../styles/partials/colors' as *;
 
-.warehouse{
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.warehouse {
 
-    &__header{
+    &__header {
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        @include tablet{
+        @include tablet {
             flex-direction: row;
         }
 
-        &-title{
-            color: green;
+        &-title {
+            align-self: flex-start;
+            margin: .75rem;
+            margin-left: 1.5rem;
+        }
+
+        &-search {
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid $cloud;
+            border-radius: 1.25rem;
+            padding: .5rem;
+
+            &__text {
+                border: none;
+                outline: none;
+                padding-left: .5rem;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            &__icon {
+                padding-right: .5rem;
+                cursor: pointer;
+            }
+        }
+
+        &-button{
+            border: none;
+            width: 90%;
+            background-color: $instock-indigo;
+            color: $white;
+            border-radius: 1.25rem;
+            padding: .65rem;
+            margin-top: .75rem;
         }
     }
+}
+
+::placeholder {
+    color: $cloud;
 }

@@ -2,3 +2,10 @@
 @use '../src/styles/partials/mixin' as *;
 @use '../src/styles/partials/typography' as *;
 @use '../src/styles/partials/variables' as *;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
