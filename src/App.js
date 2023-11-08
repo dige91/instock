@@ -3,6 +3,7 @@ import './App.scss';
 import Inventory from './pages/Inventory/Inventory';
 import Warehouse from './pages/Warehouse/Warehouse';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path='/' element={<Warehouse/>} />
           <Route path= '/inventory' element={<Inventory/>} />
         </Routes>
+      <Footer />
       </BrowserRouter>
     </div>
   );
