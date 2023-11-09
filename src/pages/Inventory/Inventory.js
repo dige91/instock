@@ -1,5 +1,10 @@
+import InventoryList from "../../components/InventoryList/InventoryList";
+
+
 const Inventory = ()=> {
-    return ("placeholder");
+    return (
+        <InventoryList/>
+    );
 }
 
 export default Inventory;

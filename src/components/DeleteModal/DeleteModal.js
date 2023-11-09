@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import '../DeleteModal/DeleteModal.scss';
 import Delete from '../../assets/icons/delete_outline-24px.svg';
 import Close from '../../assets/icons/close-24px.svg';
+const REACT_APP_BACKEND_URL = "http://localhost:8080/warehouse";
 
 
 const DeleteModal = () => {
@@ -10,6 +11,7 @@ const DeleteModal = () => {
     const toggleModal = () => {
         setModal(!modal)
     }
+    
     return (
        <div className="deletemodal">
         <img src={Delete} onClick={toggleModal} className="deletemodal__button"/>
@@ -31,6 +33,7 @@ const DeleteModal = () => {
         </div>
         </div>
         )}
+        
 
        </div> 
       );
