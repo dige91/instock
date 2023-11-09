@@ -1,0 +1,39 @@
+@use '../../styles/partials/mixin' as * ;
+@use '../../styles/partials/colors' as *;
+
+.contact{
+    margin: 1rem 0;
+    padding: 0 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+        width:50%;
+
+    }
+    &__heading{
+        @include section-header-padding;
+        @include subheader-font;
+        padding-top: 0;
+    }
+    &__label{
+        @include label-padding;
+        @include buttonLabel-font;
+    }
+    &__input{
+        height:2.25rem;
+        width: 100%;
+        border-radius: 1.25rem;
+        padding: 0 1rem;
+        border: none;
+        border:1px solid $cloud;
+
+        @include tablet {
+            height: 2.375rem;
+        }
+        &::placeholder {
+          color:  $instock-black;
+          font-family: 'Titillium';
+        }
+    }
+    }
