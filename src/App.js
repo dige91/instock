@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Warehouse/>} />
           <Route path= '/inventory' element={<Inventory/>} />
-          <Route path='/add-a-warehouse' element={<AddWarehouse />} />
+          <Route path='/add-warehouse' element={<AddWarehouse />} />
         </Routes>
       </BrowserRouter>
     </div>
