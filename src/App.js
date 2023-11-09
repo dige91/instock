@@ -19,7 +19,7 @@ function App() {
           <Route path='/edit-warehouse/:id' element={<EditWarehouse />} />
         </Routes>
       </BrowserRouter>
-      <DeleteModal/>
+      {/* <DeleteModal/> */}
     </div>
   );
 }

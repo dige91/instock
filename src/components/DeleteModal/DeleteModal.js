@@ -22,7 +22,7 @@ import { Link } from "react-router-dom";
 //     deleteWarehouse();
 // }
 
-const DeleteModal = () => {
+const DeleteModal = ({classNm}) => {
     const [modal, setModal] = useState(false)
 
     const toggleModal = () => {
@@ -31,14 +31,14 @@ const DeleteModal = () => {
     
     return (
 
-        <div className="deletemodal">
+        <div className={classNm}>
             {/* <div className='user' key={Warehouse.id}>
                 {warehouse.name}
                 <Link to={`/update-user/${warehouse.id}`}><div>🖊</div></Link>
             </div> */}
 
-        <img src={Delete} onClick={toggleModal} className="deletemodal__button"/>
-            Test
+        <img src={Delete} onClick={toggleModal} />
+          
         {modal && (
             <div className="deletemodal__overlay">
                 <div className="deletemodal__overlay-content">

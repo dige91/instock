@@ -4,6 +4,7 @@ import chevron from '../../assets/icons/chevron_right-24px.svg';
 import del from '../../assets/icons/delete_outline-24px.svg';
 import edit from '../../assets/icons/edit-24px.svg';
 import { Link } from 'react-router-dom';
+import DeleteModal from '../DeleteModal/DeleteModal';
 
 const WarehouseItem = ({ warehouse }) => {
     return (
@@ -22,7 +23,8 @@ const WarehouseItem = ({ warehouse }) => {
                         {" " + warehouse.city},
                         {" " + warehouse.country}</p>
                 </div>
-                <img className="item__icons-delete" src={del} alt="delete icon"></img>
+                <DeleteModal classNm=" deletemodal item__icons-delete" />
+                {/* <img className="item__icons-delete" src={del} alt="delete icon"></img> */}
             </div>
             <div className='item__right'>
                 <div className="item__right-name">
@@ -38,7 +40,8 @@ const WarehouseItem = ({ warehouse }) => {
                 <Link to={`/update-warehouse/${warehouse.id}`}><img className="item__right-update" src={edit} alt="edit icon"></img></Link>
             </div>
             <div className="item__icons2">
-                <img className="item__icons2-delete" src={del} alt="delete icon"></img>
+                {/* <img onClick={<DeleteModal/>} className="item__icons2-delete" src={del} alt="delete icon"></img> */}
+                <DeleteModal classNm=" deletemodal item__icons2-delete"/>
                 <Link to={`/edit-warehouse/${warehouse.id}`}><img className="item__icons2-update" src={edit} alt="edit icon"></img></Link>
             </div>
         </div>
