@@ -1,0 +1,34 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixin' as *;
+
+
+.button-alt {
+    height:2.25rem;
+    width: 100%;
+    border-radius: 1.25rem;
+    border: none;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    height: 2.25rem;
+    color: $slate;
+    background-color: $white ;
+    border: 1px solid $cloud;
+    @include buttonLabel-font;
+
+    @include tablet {
+        padding: 0 1rem;
+        height: 2.375rem;
+        width: 10.3125rem;
+    }
+    &:hover {
+        color: $instock-indigo;
+        border-color: $instock-indigo;
+    }
+
+    &__image{
+        margin-right: .25rem;
+    }
+}
+
+
+    

@@ -8,19 +8,19 @@ import { Link } from "react-router-dom";
 
 
 
-const handleDelete = (id) => {
+// const handleDelete = (id) => {
 
-    const deleteWarehouse = async () => {
-        try {
-            const response = await axios.delete(`http://${localhost}:8080/delete/${id}`);
-            const updatedWarehouses = Warehouse.filter((warehouse) => warehouse.id !== id);
-            setWarehouse(updatedWarehouses);
-        } catch (error) {
-            console.error(error);
-        }
-    }
-    deleteWarehouse();
-}
+//     const deleteWarehouse = async () => {
+//         try {
+//             const response = await axios.delete(`http://${localhost}:8080/delete/${id}`);
+//             const updatedWarehouses = Warehouse.filter((warehouse) => warehouse.id !== id);
+//             setWarehouse(updatedWarehouses);
+//         } catch (error) {
+//             console.error(error);
+//         }
+//     }
+//     deleteWarehouse();
+// }
 
 const DeleteModal = () => {
     const [modal, setModal] = useState(false)
@@ -32,10 +32,10 @@ const DeleteModal = () => {
     return (
 
         <div className="deletemodal">
-            <div className='user' key={Warehouse.id}>
+            {/* <div className='user' key={Warehouse.id}>
                 {warehouse.name}
                 <Link to={`/update-user/${warehouse.id}`}><div>🖊</div></Link>
-            </div>
+            </div> */}
 
         <img src={Delete} onClick={toggleModal} className="deletemodal__button"/>
             Test

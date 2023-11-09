@@ -5,17 +5,25 @@ input {
     font-family: 'Titillium Web';
 }
 
+.tablet-header {
+    display: none;
+
+    @include tablet {
+        display: flex;
+    }
+}
+
 .warehouses {
-    position: absolute;
+    position: relative;
     width: stretch;
-    top: 8.75rem;
     margin: 0 1.0625rem;
     border-radius: .25rem;
     background: white;
+    top: -2rem;
     box-shadow: 0 .125rem .3125rem rgba(19, 24, 44, 0.1);
 
     @include tablet {
-        top: 5.9375rem;
+        top: -5.9375rem;
         margin: 0 4% 6.25rem 4%;
     }
 
@@ -116,11 +124,29 @@ input {
             }
         }
     }
+
+    &__tablet {
+        display: none;
+
+        @include tablet {
+            padding: .5rem 1.5rem 0.7rem 1.5rem;
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            background-color: $light-grey;
+
+            &-header{
+                font-size: .65rem;
+                color: $slate;
+                
+            }
+        }
+    }
 }
 
 button {
     font-family: 'Titillium Web';
-    
+
     &:hover {
         cursor: pointer;
     }
