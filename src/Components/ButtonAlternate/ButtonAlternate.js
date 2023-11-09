@@ -4,7 +4,7 @@ import  './ButtonAlternate.scss'
 function ButtonAlternate ({text,src}) {
     return (
         <>
-            <button className='button'><img className='button__image' src={src} />{text}</button>
+            <button className='button-alt'><img className='button__image' src={src} />{text}</button>
         </>
     )
 }

@@ -1,4 +1,5 @@
 @use "./variables" as *;
+@use './colors' as *;
 
 @mixin tablet {
     @media screen and (min-width: $tablet-breakpoint){
@@ -10,6 +11,10 @@
     @media screen and (min-width: $desktop-breakpoint){
         @content;
     }
+}
+
+@mixin divider {
+    border-bottom: $cloud .1rem solid;
 }
 
 @mixin regular {
