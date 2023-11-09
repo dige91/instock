@@ -101,6 +101,7 @@
 
         }
         &-contact{
+            text-wrap: nowrap;
             display:flex;
             flex-direction: column;
             padding-top: .7rem;

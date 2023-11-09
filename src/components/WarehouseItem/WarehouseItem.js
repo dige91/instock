@@ -35,7 +35,7 @@ const WarehouseItem = ({ warehouse }) => {
                     <p>{warehouse.contact_email}</p>
                 </div>
 
-                <Link to={`/update-warehouse/${warehouse.id}`}><img className="item__right-update" src={edit} alt="edit icon"></img></Link>
+                <Link to={`/edit-warehouse/${warehouse.id}`}><img className="item__right-update" src={edit} alt="edit icon"></img></Link>
             </div>
             <div className="item__icons2">
                 <img className="item__icons2-delete" src={del} alt="delete icon"></img>
