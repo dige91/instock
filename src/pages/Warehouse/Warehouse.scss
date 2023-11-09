@@ -14,16 +14,16 @@ input {
 }
 
 .warehouses {
-    position: absolute;
+    position: relative;
     width: stretch;
-    top: 8.75rem;
     margin: 0 1.0625rem;
     border-radius: .25rem;
     background: white;
+    top: -2rem;
     box-shadow: 0 .125rem .3125rem rgba(19, 24, 44, 0.1);
 
     @include tablet {
-        top: 5.9375rem;
+        top: -5.9375rem;
         margin: 0 4% 6.25rem 4%;
     }
 
