@@ -29,4 +29,100 @@
     font-style: normal;
 }
 
+//// PADDING Mixins ////    //// PADDING Mixins ////    //// PADDING Mixins //// 
 
+@mixin page-header-padding {
+    padding: 1.5rem 0rem ;
+   
+}
+
+@mixin section-header-padding {
+    padding: 1.5rem 0rem ;
+}
+
+@mixin section-padding {
+    padding: 0 1.6rem 1.6rem;
+    @include tablet {
+        padding: 0 3.6rem 3.6rem;
+    }
+    @include desktop {
+        padding: 0 8rem 3.6rem;
+    }
+}
+@mixin label-padding {
+    padding: 1rem 0 .25rem ;
+}
+
+//// FONT Mixins ////    //// FONT Mixins ////    //// FONT Mixins ////   
+
+@mixin page-header-font {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    font-weight: $bold;
+
+    @include tablet {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+}
+
+@mixin subheader-font {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: $bold;
+
+}
+@mixin buttonLabel-font{
+    font-size: .8125rem;
+    line-height: 1.25rem;
+    font-weight: $normal;
+    font-family: 'Titillium';
+
+    @include tablet {
+        font-size: .875rem;
+        line-height: 1.375rem;
+    }
+}
+@mixin table-header-font {
+    font-size: .6875rem;
+    line-height: 1rem;
+    font-weight: $normal;
+
+    @include tablet {
+        font-size: .75rem;
+        line-height: 1.125rem;
+    }
+}
+@mixin body-large-font {
+    font-size: .9375rem;
+    line-height: 1.625rem;
+    font-weight: $normal;
+
+    @include tablet {
+        font-size: 1rem;
+        line-height: 1.75rem;
+    }
+
+}
+@mixin body-medium-font {
+    font-size: .8125rem;
+    line-height: 1.25rem;
+    font-weight: $normal;
+
+    @include tablet {
+        font-size:  .875rem;
+        line-height: 1.375rem;
+    }
+
+}
+@mixin body-small-font {
+    font-size: .6875rem;
+    line-height: 1rem;
+    font-weight: $normal;
+
+    @include tablet {
+        font-size: .75rem;
+        line-height: 1.125rem;
+    }
+
+}

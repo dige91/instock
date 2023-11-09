@@ -3,6 +3,7 @@ import './App.scss';
 import Inventory from './pages/Inventory/Inventory';
 import Warehouse from './pages/Warehouse/Warehouse';
 import Header from './components/Header/Header';
+import AddWarehouse from './components/AddWarehouse/AddWarehouse';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Warehouse/>} />
           <Route path= '/inventory' element={<Inventory/>} />
+          <Route path='/add-a-warehouse' element={<AddWarehouse />} />
         </Routes>
       </BrowserRouter>
     </div>

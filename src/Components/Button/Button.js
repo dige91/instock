@@ -1,10 +1,10 @@
 import  './Button.scss'
 
 
-function Button ({text,src}) {
+function Button ({text,src, type}) {
     return (
         <>
-            <button className='button'><img className='button__image' src={src} />{text}</button>
+            <button className='button'><img className='button__image' type={type} src={src} />{text}</button>
         </>
     )
 }

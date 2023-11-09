@@ -11,6 +11,7 @@
     padding: 0 1rem;
     margin-bottom: .3125rem;
     height: 2.25rem;
+    @include buttonLabel-font;
 
     @include tablet {
         height: 2.375rem;
