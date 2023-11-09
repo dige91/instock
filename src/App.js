@@ -5,7 +5,6 @@ import Warehouse from './pages/Warehouse/Warehouse';
 import Header from './components/Header/Header';
 import AddWarehouse from './components/AddWarehouse/AddWarehouse';
 import EditWarehouse from './components/EditWarehouse/EditWarehouse';
-import DeleteModal from './components/DeleteModal/DeleteModal';
 
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
           <Route path='/edit-warehouse/:id' element={<EditWarehouse />} />
         </Routes>
       </BrowserRouter>
-      {/* <DeleteModal/> */}
     </div>
   );
 }

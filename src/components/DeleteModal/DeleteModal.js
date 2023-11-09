@@ -5,28 +5,37 @@ import Close from '../../assets/icons/close-24px.svg';
 import Warehouse from "../../pages/Warehouse/Warehouse";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import API_URL from "../../utils";
 
 
 
-// const handleDelete = (id) => {
 
-//     const deleteWarehouse = async () => {
-//         try {
-//             const response = await axios.delete(`http://${localhost}:8080/delete/${id}`);
-//             const updatedWarehouses = Warehouse.filter((warehouse) => warehouse.id !== id);
-//             setWarehouse(updatedWarehouses);
-//         } catch (error) {
-//             console.error(error);
-//         }
-//     }
-//     deleteWarehouse();
-// }
 
-const DeleteModal = ({classNm}) => {
+const DeleteModal = ({classNm, setWarehouses, id}) => {
+
+    const handleDelete = (event) => {
+        event.preventDefault()
+    
+        const deleteWarehouse = async () => {
+            try {
+                const response = await axios.delete(`${API_URL}/warehouse/${id}`);
+                // const updatedWarehouses = Warehouse.filter((warehouse) => warehouse.id !== id);
+                setWarehouses([]);
+
+                window.location.href = '/'
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        deleteWarehouse();
+    }
+
+
     const [modal, setModal] = useState(false)
 
     const toggleModal = () => {
         setModal(!modal)
+        
     }
     
     return (
@@ -51,7 +60,7 @@ const DeleteModal = ({classNm}) => {
                 </div>
             <div className="deletemodal__overlay-content-buttons">
             <button onClick={toggleModal} className="deletemodal__overlay-content-buttons-cancel">Cancel</button>
-            <button onClick={toggleModal} className="deletemodal__overlay-content-buttons-delete">Delete</button>
+            <button onClick={handleDelete} className="deletemodal__overlay-content-buttons-delete">Delete</button>
             </div>
         </div>
         </div>
