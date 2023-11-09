@@ -1,0 +1,132 @@
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/typography' as *;
+ 
+ .deletemodal{
+   &__overlay{
+     background-color: $light-grey;
+     width: 100vw;
+     height: 100vh;
+     padding-top: 5rem;
+     top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      position: fixed;
+      background: rgba(49,49,49,0.8);
+     @include tablet{
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      position: fixed;
+      background: rgba(49,49,49,0.8);
+      padding-top: 11rem;
+      padding-left: 2rem;
+      @include desktop{
+         display: flex;
+         justify-content: center;
+      }
+     }
+      &-content{
+      width: 80vw;
+      height: 60vh;
+      position: relative;
+      background-color: #ffffff;
+      left: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem;
+      @include tablet{
+         height: 15vh;
+      }
+      @include desktop{
+         width: 55vw;
+         height: 10vh;
+      }
+      &-top{
+         @include tablet{
+            position: relative;
+            left: 3rem;
+         }
+         &-close{
+            width: 4vw;
+            position: relative;
+            left: 15rem;
+            @include tablet{
+               width: 3vw;
+               left: 32rem;
+           
+            }
+            @include desktop{
+               width: 2vw;
+               left: 37rem;
+            }
+         }
+         &-header{
+            font-size: 1.5rem;
+            padding-bottom: .5rem;
+            @include desktop{
+               font-size: 2rem;
+            }
+         }
+         &-confirm{
+            font-size: .7rem;
+            line-height: 1.3rem;
+            color: $instock-black;
+            @include tablet{
+               width: 68%;
+               @include desktop{
+                  font-size: 1rem;
+                  line-height: 1.5rem;
+                  padding-top: 1rem;
+               }
+            }
+            
+         }
+      }
+      &-buttons{
+         display: flex;
+         flex-direction: row;
+         justify-content: space-around;
+         @include tablet{
+            flex-direction: row;
+            justify-content: flex-end;
+         }
+         &-cancel{
+            height: 2.25rem;
+            padding: 0rem 1rem;
+            border-radius: 1.125rem;
+            width: 35vw;
+            background-color: $white;
+            border-color: $cloud;
+            @include tablet{
+               width: 10vw;
+            }
+            @include desktop{
+               width: 7vw;
+            }
+         
+         }
+         &-delete{
+            height: 2.25rem;
+            width: 35vw;
+            padding: 0rem 1rem;
+            color: $white;
+            background-color: $red;
+            border-radius: 1.125rem;
+            border-color: $red;
+            border: none;
+            @include tablet{
+               width: 10vw;
+            }
+            @include desktop{
+               width: 7vw;
+            }
+         }
+   } 
+}
+}
+ }
+   
