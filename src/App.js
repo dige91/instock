@@ -14,12 +14,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Warehouse/>} />
           <Route path= '/inventory' element={<Inventory/>} />
-<<<<<<< HEAD
-          <Route path='/add-warehouse' element={<AddWarehouse />} />
-=======
           <Route path='/add-a-warehouse' element={<AddWarehouse />} />
           <Route path='/edit-warehouse/:id' element={<EditWarehouse />} />
->>>>>>> develop
         </Routes>
       </BrowserRouter>
     </div>
