@@ -20,7 +20,6 @@ function EditWarehouse() {
             try {
                 const response = await axios.get(`${REACT_APP_BACKEND_URL}/${id}`);
                 setWarehouse(response.data);
-                console.log(response.data);
             } catch (error) {
                 console.error("error fetchin warehouse details:", error);
             }
