@@ -4,6 +4,7 @@ import Inventory from './pages/Inventory/Inventory';
 import Warehouse from './pages/Warehouse/Warehouse';
 import Header from './components/Header/Header';
 import AddWarehouse from './components/AddWarehouse/AddWarehouse';
+import EditWarehouse from './components/EditWarehouse/EditWarehouse';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path='/' element={<Warehouse/>} />
           <Route path= '/inventory' element={<Inventory/>} />
           <Route path='/add-a-warehouse' element={<AddWarehouse />} />
+          <Route path='/edit-a-warehouse' element={<EditWarehouse />} />
         </Routes>
       </BrowserRouter>
     </div>
