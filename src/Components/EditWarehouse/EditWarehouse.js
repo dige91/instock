@@ -55,7 +55,7 @@ function EditWarehouse() {
                 contact_email,
             }
             try {
-                await axios.put(`${REACT_APP_BACKEND_URL}/${id}`, updatedWarehouse);
+                await axios.patch(`${REACT_APP_BACKEND_URL}/${id}`, updatedWarehouse);
                 alert('Success');
                 window.location.href = '/';
             } catch (error) {

@@ -3,6 +3,7 @@ import '../../App.scss';
 import chevron from '../../assets/icons/chevron_right-24px.svg';
 import del from '../../assets/icons/delete_outline-24px.svg';
 import edit from '../../assets/icons/edit-24px.svg';
+import { Link } from 'react-router-dom';
 
 const WarehouseItem = ({ warehouse }) => {
     return (
@@ -34,11 +35,11 @@ const WarehouseItem = ({ warehouse }) => {
                     <p>{warehouse.contact_email}</p>
                 </div>
 
-                <img className="item__right-update" src={edit} alt="edit icon"></img>
+                <Link to={`/update-warehouse/${warehouse.id}`}><img className="item__right-update" src={edit} alt="edit icon"></img></Link>
             </div>
             <div className="item__icons2">
                 <img className="item__icons2-delete" src={del} alt="delete icon"></img>
-                <img className="item__icons2-update" src={edit} alt="edit icon"></img>
+                <Link to={`/edit-warehouse/${warehouse.id}`}><img className="item__icons2-update" src={edit} alt="edit icon"></img></Link>
             </div>
         </div>
         </>
