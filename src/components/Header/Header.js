@@ -10,10 +10,10 @@ const Header = () => {
                     <img src={Logo} alt="instock logo"></img>
                 </Link>
                 <div className="navigation-header__container">
-                    <Link to="/WarehouseList" className="navigation-header__link">
+                    <Link to="/" className="navigation-header__link">
                         Warehouses
                     </Link>
-                    <Link to="/InventoryList" className="navigation-header__link">
+                    <Link to="/inventory" className="navigation-header__link">
                         Inventory
                     </Link>
                 </div>

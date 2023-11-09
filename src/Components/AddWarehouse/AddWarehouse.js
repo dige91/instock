@@ -6,25 +6,26 @@ import './AddWarehouse.scss'
 import { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import API_URL from '../../utils'
+import { Link } from 'react-router-dom';
 
-function AddWarehouse (){
+function AddWarehouse() {
 
 
     const formRef = useRef()
     const [newWarehouse, setNewWarehouse] = useState(null)
 
-    useEffect( () => {
+    useEffect(() => {
         async function postWarehouse() {
-            const response = await axios.post(API_URL+'warehouse/', newWarehouse);
+            const response = await axios.post(API_URL + 'warehouse/', newWarehouse);
         }
-        if(newWarehouse) {
+        if (newWarehouse) {
             postWarehouse();
         }
-    }, [newWarehouse]); 
+    }, [newWarehouse]);
 
-    
 
-    
+
+
     const handleSubmit = (event) => {
         event.preventDefault()
 
@@ -37,11 +38,11 @@ function AddWarehouse (){
         const contact_position = form.contact_position.value;
         const contact_phone = form.contact_phone.value;
         const contact_email = form.contact_email.value;
-        
-        if (!warehouse_name || !address || !city || !country || !contact_name || !contact_position || !contact_phone || !contact_email){
+
+        if (!warehouse_name || !address || !city || !country || !contact_name || !contact_position || !contact_phone || !contact_email) {
             alert("You must fill out all fields");
             return;
-          } else {
+        } else {
             const inputedWarehouse = {
                 warehouse_name,
                 address,
@@ -51,13 +52,13 @@ function AddWarehouse (){
                 contact_position,
                 contact_phone,
                 contact_email,
-              }
+            }
 
             setNewWarehouse(inputedWarehouse)
-            
+
             alert('success')
             window.location.href = '/'
-          }
+        }
     }
 
 
@@ -67,10 +68,10 @@ function AddWarehouse (){
                 <WarehouseDetails />
                 <ContactDetails />
             </div>
-            
+
             <div className='form__button-container'>
-                <ButtonAlternate text='cancel'/>
-                <Button type='submit' text='+ Add a Warehouse'/>
+                <Link to='/'><ButtonAlternate text='cancel' /></Link>
+                <Button type='submit' text='+ Add a Warehouse' />
             </div>
         </form>
     )
