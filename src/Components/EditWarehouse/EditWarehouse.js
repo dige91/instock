@@ -6,6 +6,7 @@ import './EditWarehouse.scss'
 import { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 const REACT_APP_BACKEND_URL = "http://localhost:8080/warehouse";
 
 function EditWarehouse() {
@@ -74,7 +75,7 @@ function EditWarehouse() {
             </div>
 
             <div className='form__button-container'>
-                <ButtonAlternate text='cancel' />
+                <Link to='/'><ButtonAlternate text='cancel' /></Link>
                 <Button type='submit' text='Save' />
             </div>
         </form>

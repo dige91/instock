@@ -25,7 +25,7 @@ const Warehouse = () => {
                     <div className="warehouses__header-container">
                         <form className="warehouses__header-form">
                             <input type="search" name="search" className="warehouses__header-form-search" placeholder="Search..." />
-                            <Link to="/add-warehouse">
+                            <Link to="/add-a-warehouse">
                                 <button className="warehouses__header-form-button">+ Add New Warehouse</button>
                             </Link>
                         </form>
