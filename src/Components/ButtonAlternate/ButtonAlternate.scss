@@ -3,16 +3,17 @@
 
 
 .button-alt {
-    height:2.25;
+    height:2.25rem;
     width: 100%;
     border-radius: 1.25rem;
     border: none;
     padding: 0 1rem;
-    margin-bottom: .3125rem;
+    margin-bottom: 1rem;
     height: 2.25rem;
     color: $slate;
     background-color: $white ;
     border: 1px solid $cloud;
+    @include buttonLabel-font;
 
     @include tablet {
         padding: 0 1rem;

@@ -3,9 +3,9 @@ import './WarehouseDetails.scss'
 function WarehouseDetails (){
     return (
             <div className='warehouse'>
-                <h2>Warehouse Details</h2>
-                <label className='warehouse__label' htmlFor='name'>Warehouse Name</label>
-                <input className='warehouse__input' placeholder='Warehouse Name'  type='text' id='name' name='name'></input>
+                <h2 className='warehouse__heading'>Warehouse Details</h2>
+                <label className='warehouse__label' htmlFor='warehouse_name'>Warehouse Name</label>
+                <input className='warehouse__input' placeholder='Warehouse Name'  type='text' id='warehouse_name' name='warehouse_name'></input>
 
                 <label className='warehouse__label' htmlFor='address'>Street Address</label>
                 <input className='warehouse__input' placeholder='Street Address'  type='text' id='address' name='address'></input>
