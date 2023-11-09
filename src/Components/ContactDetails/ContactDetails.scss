@@ -2,7 +2,8 @@
 @use '../../styles/partials/colors' as *;
 
 .contact{
-    padding: 1rem;
+    margin: 1rem 0;
+    padding: 0 1.5rem 1rem;
     display: flex;
     flex-direction: column;
 
@@ -10,7 +11,15 @@
         width:50%;
 
     }
-    
+    &__heading{
+        @include section-header-padding;
+        @include subheader-font;
+        padding-top: 0;
+    }
+    &__label{
+        @include label-padding;
+        @include buttonLabel-font;
+    }
     &__input{
         height:2.25rem;
         width: 100%;
@@ -24,6 +33,7 @@
         }
         &::placeholder {
           color:  $instock-black;
+          font-family: 'Titillium';
         }
     }
     }
