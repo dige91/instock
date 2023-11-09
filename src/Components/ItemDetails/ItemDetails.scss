@@ -1,0 +1,10 @@
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/colors' as *;
+
+.Item{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 1px $cloud solid;
+}

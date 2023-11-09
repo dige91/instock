@@ -1,3 +1,5 @@
+import './Inventory.scss';
+
 const Inventory = ()=> {
     return ("placeholder");
 }
