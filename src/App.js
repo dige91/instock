@@ -15,7 +15,11 @@ function App() {
           <Route path='/' element={<Warehouse/>} />
           <Route path= '/inventory' element={<Inventory/>} />
           <Route path='/add-a-warehouse' element={<AddWarehouse />} />
+<<<<<<< Updated upstream
           <Route path='/edit-warehouse/:id' element={<EditWarehouse />} />
+=======
+          <Route path='/update-warehouse/:id' element={<EditWarehouse />} />s
+>>>>>>> Stashed changes
         </Routes>
       </BrowserRouter>
     </div>
