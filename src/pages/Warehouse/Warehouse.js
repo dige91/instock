@@ -16,7 +16,7 @@ const Warehouse = () => {
             setWarehouses(response.data);
         }
         getWarehouses();
-    })
+    },[warehouses])
     return (
         <>
             <div className="warehouses">
@@ -39,7 +39,7 @@ const Warehouse = () => {
                     <div className='warehouses__tablet-header'>ACTIONS</div>
                 </div>
                 {warehouses.map((warehouse) => (
-                    <WarehouseItem key={warehouse.id} warehouse={warehouse} />
+                    <WarehouseItem key={warehouse.id} id={warehouse?.id} warehouse={warehouse} setWarehouses={setWarehouses}/>
                 ))}
             </div>
         </>
