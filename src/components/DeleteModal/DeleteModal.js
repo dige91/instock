@@ -2,7 +2,25 @@ import React, { useState } from "react";
 import '../DeleteModal/DeleteModal.scss';
 import Delete from '../../assets/icons/delete_outline-24px.svg';
 import Close from '../../assets/icons/close-24px.svg';
+import Warehouse from "../../pages/Warehouse/Warehouse";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
+
+
+const handleDelete = (id) => {
+
+    const deleteWarehouse = async () => {
+        try {
+            const response = await axios.delete(`http://${localhost}:8080/delete/${id}`);
+            const updatedWarehouses = Warehouse.filter((warehouse) => warehouse.id !== id);
+            setWarehouse(updatedWarehouses);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+    deleteWarehouse();
+}
 
 const DeleteModal = () => {
     const [modal, setModal] = useState(false)
@@ -10,8 +28,15 @@ const DeleteModal = () => {
     const toggleModal = () => {
         setModal(!modal)
     }
+    
     return (
-       <div className="deletemodal">
+
+        <div className="deletemodal">
+            <div className='user' key={Warehouse.id}>
+                {warehouse.name}
+                <Link to={`/update-user/${warehouse.id}`}><div>🖊</div></Link>
+            </div>
+
         <img src={Delete} onClick={toggleModal} className="deletemodal__button"/>
             Test
         {modal && (
