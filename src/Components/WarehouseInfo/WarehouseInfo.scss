@@ -1,0 +1,22 @@
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/typography' as *;
+
+.warehouseinfo{
+
+    border-bottom: 1px solid $instock-black;
+    
+    &__header{
+        display: flex;
+        justify-content: space-around;
+        border-bottom: 1px solid $instock-black;
+
+        &-left{
+            display: flex;
+
+            &-name{
+                line-height: 5rem;
+            }
+        }
+    }
+}
