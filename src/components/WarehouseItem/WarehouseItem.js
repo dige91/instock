@@ -7,14 +7,29 @@ import { Link } from 'react-router-dom';
 import DeleteModal from '../DeleteModal/DeleteModal';
 
 const WarehouseItem = ({ warehouse ,setWarehouses, id }) => {
+    
+    if (!warehouse){
+        return (
+            <>
+                <h2>Loading......</h2>
+            </>
+        )
+    }
+    console.log(warehouse)
+    
     return (
         <>
         <div className="item">
             <div className="item__left">
                 <div className="item__left-warehouse">
                     <h4 className='headings'>WAREHOUSE</h4>
+                
                     <div className='item__left-warehouse__name'>{warehouse.warehouse_name}
-                        <img className='logo' src={chevron} alt="chevron"></img></div>
+                    <Link to ={`/warehouse-info/${warehouse.id}`} >
+                    <img className='logo' src={chevron} alt="chevron"/>
+                    </Link>
+                    </div>
+                        
 
                 </div>
                 <div className="item__left-adress">
