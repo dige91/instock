@@ -1,12 +1,17 @@
-function ItemDetails (){
+import './ItemDetails.scss';
+function ItemDetails ({item}){
+
+
     return (
             <div className='Item'>
                 <h2>Item Details</h2>
-                <label className='form__name-label' htmlFor='name'></label>
-                <input className='form__name-input' type='text' id='name' name='name'></input>
-                <label className='form__description-label' htmlFor='description'></label>
-                <input className='form__description-input' type='text' id='description' name='description'></input>
-                <label className='form__category-label' htmlFor='category' ></label>
+                <label className='form__name-label' htmlFor='name'>Item Name </label>
+                <input className='form__name-input' type='text' id='name' name='name' defaultValue={item.item_name}></input>
+
+                <label className='form__description-label' htmlFor='description'>Description</label>
+                <textarea className='form__description-input' type='text' id='description' name='description' rows='4' defaultValue={item.description}></textarea>
+
+                <label className='form__category-label' htmlFor='category'>Category</label>
                 <select name="category">
                     <option value="electronics" selected>electronics</option>
                     <option value="Accessories">Accessories</option>
@@ -17,3 +22,5 @@ function ItemDetails (){
             </div>
     )
 }
+
+export default ItemDetails;
