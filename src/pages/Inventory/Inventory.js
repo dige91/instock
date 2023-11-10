@@ -1,7 +1,10 @@
 import './Inventory.scss';
+import WarehouseCard from '../../components/WarehouseCard/WarehouseCard';
 
 const Inventory = ()=> {
-    return ("placeholder");
+    return (
+        <WarehouseCard />
+    );
 }
 
 export default Inventory;

@@ -1,0 +1,152 @@
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+.warehouses {
+    padding: 1rem 1rem;
+    width: 90%;
+    margin: auto;
+    background-color: $white;
+    border-radius: 0;
+
+    &__header {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+    }
+
+    &__title {
+        padding-left: 1rem;
+    }
+
+    &__forms {
+        display: flex;
+        width: 25%;
+        padding: 1rem 1rem;
+
+        @include tablet {
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+        @include desktop {
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+    }
+
+    &__input-container {
+        position: relative;
+        display: flex;
+        padding-bottom: 1rem;
+
+        @include tablet {
+            width: 40%;
+            padding: 0 1rem;
+        }
+
+        @include desktop {
+            width: 35%;
+            padding: 0 1rem;
+        }
+    }
+
+    &__button {
+        background-color: $instock-indigo;
+        margin-bottom: 1rem;
+        margin-top: 0;
+
+        @include tablet {
+            width: 40%;
+            padding: 0 1rem;
+        }
+
+        @include desktop {
+            width: 22%;
+            padding: 0 1rem;
+        }
+    }
+
+    &__sections {
+        display: none;
+        background-color: $light-grey;
+
+        @include tablet {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        @include desktop {
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+}
+
+.warehouse {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-top: 1px $cloud solid;
+    border-bottom: 1rem;
+}
+
+.warehouseSection {
+    flex-direction: column;
+
+    @include desktop {
+        flex-direction: row;
+    }
+
+    @include tablet {
+        flex-direction: row;
+    }
+}
+
+.warehouseInformation {
+    display: flex;
+    width: 100%;
+
+    .warehouseBlock {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 1rem;
+        flex-wrap: wrap;
+        font-size: 13px;
+
+        @include desktop {}
+
+        @include tablet {}
+    }
+
+    .warehouseBorder {
+        border: none;
+        // padding: 1rem;
+
+        @include desktop {
+            border-left: solid 1px;
+            color: $cloud;
+            // padding: 1rem;
+        }
+
+        @include tablet {
+            border-left: solid 1px;
+            color: $cloud;
+            // padding: 1rem;
+        }
+    }
+}
