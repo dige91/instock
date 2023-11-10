@@ -1,5 +1,11 @@
+import AddInventory from "../../components/AddInventory/AddInventory";
+
 const Inventory = ()=> {
-    return ("placeholder");
+    return (
+    <>
+        <AddInventory />
+    </>
+    );
 }
 
 export default Inventory;

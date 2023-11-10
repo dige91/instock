@@ -2,7 +2,7 @@ import ItemAvailability from '../ItemAvailability/ItemAvailability'
 import ItemDetails from '../ItemDetails/ItemDetails'
 import ButtonAlternate from '../ButtonAlternate/ButtonAlternate'
 import Button from '../Button/Button'
-import './AddWarehouse.scss'
+import './AddInventory.scss'
 import { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import API_URL from '../../utils'
@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 function AddInventory() {
 
 
-    const formRef = useRef()
+    const ItemFormRef = useRef()
     const [newItem, setNewItem] = useState(null)
 
     useEffect(() => {
@@ -19,7 +19,7 @@ function AddInventory() {
             const response = await axios.post(API_URL + 'inventory/', newItem);
         }
         if (newItem) {
-            postWarehouse();
+            postInventory();
         }
     }, [newItem]);
 
@@ -29,32 +29,27 @@ function AddInventory() {
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        const form = formRef.current
-        const warehouse_name = form.warehouse_name.value;
-        const address = form.address.value;
-        const city = form.city.value;
-        const country = form.country.value;
-        const contact_name = form.contact_name.value;
-        const contact_position = form.contact_position.value;
-        const contact_phone = form.contact_phone.value;
-        const contact_email = form.contact_email.value;
+        const form = ItemFormRef.current
+        const item_name = form.item_name.value;
+        const description = form.description.value;
+        const category = form.category.value;
+        const status = form.status.value;
+        const quantity = form.quantity.value;
+        
 
-        if (!warehouse_name || !address || !city || !country || !contact_name || !contact_position || !contact_phone || !contact_email) {
+        if (!item_name || !description || !category || !status || !quantity ) {
             alert("You must fill out all fields");
             return;
         } else {
-            const inputedWarehouse = {
-                warehouse_name,
-                address,
-                city,
-                country,
-                contact_name,
-                contact_position,
-                contact_phone,
-                contact_email,
+            const inputedItem = {
+                item_name,
+                description,
+                category,
+                status,
+                quantity,
             }
 
-            setNewWarehouse(inputedWarehouse)
+            setNewItem(inputedItem)
 
             alert('success')
             window.location.href = '/'
@@ -63,7 +58,7 @@ function AddInventory() {
 
 
     return (
-        <form className='form' ref={formRef} onSubmit={handleSubmit}>
+        <form className='form' ref={ItemFormRef} onSubmit={handleSubmit}>
             <div className='form__input-container'>
                 <ItemDetails />
                 <ItemAvailability />

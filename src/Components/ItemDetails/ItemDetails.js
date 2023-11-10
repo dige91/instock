@@ -4,8 +4,8 @@ function ItemDetails (){
     return (
             <div className='Item'>
                 <h2>Item Details</h2>
-                <label className='item__label' htmlFor='name'></label>
-                <input className='item__input' type='text' id='name' name='name'></input>
+                <label className='item__label' htmlFor='item_name'></label>
+                <input className='item__input' type='text' id='item_name' name='item_name'></input>
                 <label className='item__label' htmlFor='description'></label>
                 <input className='item__input item__input--large' type='text' id='description' name='description'></input>
                 <label className='item__label' htmlFor='category' ></label>
@@ -19,3 +19,5 @@ function ItemDetails (){
             </div>
     )
 }
+
+export default ItemDetails
