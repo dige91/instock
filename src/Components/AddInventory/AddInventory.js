@@ -11,34 +11,45 @@ import { Link } from 'react-router-dom';
 function AddInventory() {
 
 
-    const ItemFormRef = useRef()
-    const [newItem, setNewItem] = useState(null)
+    const [item_name, setItem_name] = useState("");
+    const [description, setDescription] = useState("");
+    const [category, setCategory] = useState("");
+    const [status, setStatus] = useState("outOfStock");
+    const [quantity, setQuantity] = useState(0)
+    const [warehouse, setWarehouse] = useState("")
+
+
+    const [newItem, setNewItem] = useState("")
+
 
     useEffect(() => {
         async function postInventory() {
-            const response = await axios.post(API_URL + 'inventory/', newItem);
+            const response = await axios.post(API_URL + '/inventory', newItem);
         }
         if (newItem) {
             postInventory();
         }
     }, [newItem]);
 
-
+    
+     
+      
 
 
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        const form = ItemFormRef.current
-        const item_name = form.item_name.value;
-        const description = form.description.value;
-        const category = form.category.value;
-        const status = form.status.value;
-        const quantity = form.quantity.value;
-        
-
-        if (!item_name || !description || !category || !status || !quantity ) {
+        if (!item_name || !description || !category || !status || (typeof(quantity) !== 'number') || !warehouse) {
             alert("You must fill out all fields");
+            const inputedItem = {
+                item_name,
+                description,
+                category,
+                status,
+                quantity,
+                warehouse_id: warehouse
+            }
+            console.log(inputedItem)
             return;
         } else {
             const inputedItem = {
@@ -47,21 +58,36 @@ function AddInventory() {
                 category,
                 status,
                 quantity,
+                warehouse_id: warehouse
             }
 
             setNewItem(inputedItem)
 
             alert('success')
-            window.location.href = '/'
+            // window.location.href = '/'
         }
     }
 
 
     return (
-        <form className='form' ref={ItemFormRef} onSubmit={handleSubmit}>
+        <form className='form' onSubmit={handleSubmit}>
             <div className='form__input-container'>
-                <ItemDetails />
-                <ItemAvailability ItemFormRef={ItemFormRef.current}/>
+                <ItemDetails 
+                    item_name={item_name}
+                    setItem_name={setItem_name}
+                    description={description}
+                    setDescription={setDescription}
+                    category={category}
+                    setCategory={setCategory}
+                />
+                <ItemAvailability 
+                    status={status}
+                    setStatus={setStatus}
+                    quantity={quantity} 
+                    setQuantity={setQuantity}
+                    warehouse={warehouse}
+                    setWarehouse={setWarehouse}
+                />
             </div>
 
             <div className='form__button-container'>
