@@ -1,0 +1,15 @@
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/colors' as *;
+
+.header{
+    padding: 1rem;
+    color: $instock-black;
+    border-bottom: solid $cloud 1px;
+}
+.arrow{
+    margin-right: .5rem;
+}
+.container1{
+    display: flex;
+    flex-direction: column;
+}
