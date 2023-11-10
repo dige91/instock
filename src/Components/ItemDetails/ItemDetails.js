@@ -2,14 +2,14 @@ import './ItemDetails.scss'
 
 function ItemDetails (){
     return (
-            <div className='Item'>
-                <h2>Item Details</h2>
-                <label className='item__label' htmlFor='item_name'></label>
-                <input className='item__input' type='text' id='item_name' name='item_name'></input>
-                <label className='item__label' htmlFor='description'></label>
-                <input className='item__input item__input--large' type='text' id='description' name='description'></input>
-                <label className='item__label' htmlFor='category' ></label>
-                <select name="category">
+            <div className='item-details'>
+                <h2 className='item-details__heading'>Item Details</h2>
+                <label className='item-details__label' htmlFor='item-details_name'>Item Name</label>
+                <input className='item-details__input' type='text' id='item_name' name='item_name'></input>
+                <label className='item-details__label' htmlFor='description'>Description</label>
+                <input className='item-details__input item-details__input--large' type='text' id='description' name='description'></input>
+                <label className='item-details__label' htmlFor='category' ></label>
+                <select className='item-details__input' name="category">
                     <option value="electronics" selected>electronics</option>
                     <option value="Accessories">Accessories</option>
                     <option value="Gear">Gear</option>

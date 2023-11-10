@@ -61,11 +61,11 @@ function AddInventory() {
         <form className='form' ref={ItemFormRef} onSubmit={handleSubmit}>
             <div className='form__input-container'>
                 <ItemDetails />
-                <ItemAvailability />
+                <ItemAvailability ItemFormRef={ItemFormRef.current}/>
             </div>
 
             <div className='form__button-container'>
-                <Link to='/'><ButtonAlternate text='cancel' /></Link>
+                <Link to='/' className='form__link'><ButtonAlternate text='cancel' /></Link>
                 <Button type='submit' text='+ Add a Warehouse' />
             </div>
         </form>

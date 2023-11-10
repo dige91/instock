@@ -2,7 +2,6 @@
 @use '../../styles/partials/colors' as *;
 
 .form{
-    height: 80vh;
     display: flex;
     flex-direction: column;
     @include section-padding;
@@ -36,7 +35,7 @@
             }
         }
         .button-alt{
-            width: 48%;
+            width: 100%;
             @include tablet {
                 width: fit-content;
                 margin-right: 1rem;
