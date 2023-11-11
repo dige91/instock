@@ -1,5 +1,6 @@
 @use '../../styles/partials/mixin' as *;
 @use '../../styles/partials/colors' as *;
+<<<<<<< HEAD
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/typography' as *;
 
@@ -45,4 +46,13 @@
             height: 5rem;
         }
     }
+=======
+
+.Item{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 1px $cloud solid;
+>>>>>>> develop
 }
