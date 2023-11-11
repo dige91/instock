@@ -23,12 +23,11 @@ const WarehouseItem = ({ warehouse ,setWarehouses, id }) => {
             <div className="item__left">
                 <div className="item__left-warehouse">
                     <h4 className='headings'>WAREHOUSE</h4>
-                
-                    <div className='item__left-warehouse__name'>{warehouse.warehouse_name}
                     <Link to ={`/warehouse-info/${warehouse.id}`} >
+                    <div className='item__left-warehouse__name'>{warehouse.warehouse_name}
                     <img className='logo' src={chevron} alt="chevron"/>
-                    </Link>
                     </div>
+                    </Link>
                         
 
                 </div>
