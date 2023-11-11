@@ -1,9 +1,9 @@
 import './Inventory.scss';
 import WarehouseCard from '../../components/WarehouseCard/WarehouseCard';
 
-const Inventory = ()=> {
+const Inventory = ( {warehouses , setWarehouses} )=> {
     return (
-        <WarehouseCard />
+        <WarehouseCard  warehouses={warehouses} setWarehouses={setWarehouses} />
     );
 }
 

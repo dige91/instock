@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 const REACT_APP_BACKEND_URL = "http://localhost:8080/warehouse";
 
-const WarehouseCard = () => {
+const WarehouseCard = ( {warehouses , setWarehouses} ) => {
 
     return (
         <>
@@ -24,13 +24,13 @@ const WarehouseCard = () => {
                     </div>
                 </div>
                 <div className="WarehouseCard__tablet">
-                    <div className='WarehouseCard__tablet-header'>WAREHOUSE <img className='logo' src={sort} alt="sort arrows"></img></div>
-                    <div className='WarehouseCard__tablet-header'>ADDRESS <img className='logo' src={sort} alt="sort arrows"></img></div>
-                    <div className='WarehouseCard__tablet-header'>CONTACT NAME<img className='logo' src={sort} alt="sort arrows"></img></div>
-                    <div className='WarehouseCard__tablet-header'>CONTACT INFORMATION <img className='logo' src={sort} alt="sort arrows"></img></div>
+                    <div className='WarehouseCard__tablet-header'>INVENTORY ITEM <img className='logo' src={sort} alt="sort arrows"></img></div>
+                    <div className='WarehouseCard__tablet-header'>CATEGORY <img className='logo' src={sort} alt="sort arrows"></img></div>
+                    <div className='WarehouseCard__tablet-header'>STATUS<img className='logo' src={sort} alt="sort arrows"></img></div>
+                    <div className='WarehouseCard__tablet-header'>QUANTITY<img className='logo' src={sort} alt="sort arrows"></img></div>
                     <div className='WarehouseCard__tablet-header'>ACTIONS</div>
                 </div>
-                {warehouses.map((warehouse) => (
+                {warehouses?.map((warehouse) => (
                     <WarehouseItem key={warehouse.id} id={warehouse?.id} warehouse={warehouse} setWarehouses={setWarehouses}/>
                 ))}
             </div>
