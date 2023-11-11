@@ -4,18 +4,90 @@
 
 .warehouseinfo{
 
-    border-bottom: 1px solid $instock-black;
-    
+    border-bottom: 1px solid $light-grey;
+    position: relative;
+    width: stretch;
+    margin: 0 1.0625rem;
+    border-radius: .25rem;
+    background: white;
+    top: -2rem;
+    box-shadow: 0 .125rem .3125rem rgba(19, 24, 44, 0.1);
+
+    @include tablet {
+        top: -5.9375rem;
+        margin: 0 4% 6.25rem 4%;
+    }
+
+    @include desktop {
+        margin: 0 10% 9.375rem 10%;
+    }
+
     &__header{
         display: flex;
-        justify-content: space-around;
-        border-bottom: 1px solid $instock-black;
-
+        justify-content: space-between;
+        border-bottom: 1px solid $cloud;
+        padding: 2rem 1rem;
         &-left{
             display: flex;
 
+            &-link{
+                display: flex;
+            }
+
             &-name{
-                line-height: 5rem;
+               
+            }
+
+        }
+    }
+    &__main{
+        display: flex;
+        flex-direction: column;
+            @include tablet{
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+            }
+        &-section{
+            padding: 2rem 1rem;
+            @include tablet{
+                width: 21vw;
+               
+            }
+            @include desktop{
+                width: 12vw;
+            }
+            &-staticaddress{
+                color: $slate;
+                @include tablet{
+                    border-right: 1px solid $cloud;
+                }
+            }
+            &-address{
+                @include tablet{
+                    border-right: 1px solid $cloud
+                }
+            }
+        }
+        &-contact{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            @include tablet{
+                justify-content: space-between;
+                width: 50%;
+            }
+            &-left{
+                display: flex;
+                flex-direction: column;
+                &-staticname{
+                    color: $slate;
+                }
+            }
+            &-right{
+                &-staticinfo{
+                    color: $slate;
+                }
             }
         }
     }

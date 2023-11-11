@@ -1,7 +1,7 @@
 import '../WarehouseInfo/WarehouseInfo.scss';
 import Back from '../../assets/icons/arrow_back-24px.svg';
 import Edit from '../../assets/icons/edit-24px.svg';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 
 
@@ -21,15 +21,17 @@ const WarehouseInfo = ({ warehouses ,setWarehouses }) => {
        <div className='warehouseinfo'>
         <div className='warehouseinfo__header'>
             <div className='warehouseinfo__header-left'>
-            <img className='warehouseinfo__header-left-back' src={Back}/>
+                <Link to={'/'} className='warehouseinfo__header-left-link'>
+                <img className='warehouseinfo__header-left-link-back' src={Back}/>
+                </Link>
             <h1 className='warehouseinfo__header-left-name'>{foundWarehouse.warehouse_name}</h1>
             </div>
             <img className='warehouseinfo__header-edit' src={Edit}/>
         </div>
         <div className='warehouseinfo__main'>
-        <div>
-        <h4 className='warehouseinfo__main-staticaddress'>WAREHOUSE ADDRESS:</h4>
-            <div className='warehouseinfo__main-address'>{foundWarehouse.address + ' ' + foundWarehouse.city + ' ' + foundWarehouse.country}</div>
+        <div className='warehouseinfo__main-section'>
+        <h4 className='warehouseinfo__main-section-staticaddress'>WAREHOUSE ADDRESS:</h4>
+            <div className='warehouseinfo__main-section-address'>{foundWarehouse.address + ' ' + foundWarehouse.city + ' ' + foundWarehouse.country}</div>
         </div>
         <div className='warehouseinfo__main-contact'>
         
@@ -43,7 +45,6 @@ const WarehouseInfo = ({ warehouses ,setWarehouses }) => {
                 <div className='warehouseinfo__main-contact-right-phone'>{foundWarehouse.contact_phone}</div>
                 <div className='warehouseinfo__main-contact-right-email'>{foundWarehouse.contact_email}</div>
                 </div>
-            .
             </div>
        </div>
        </div>
