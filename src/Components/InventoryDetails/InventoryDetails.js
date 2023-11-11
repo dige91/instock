@@ -5,6 +5,8 @@ import axios from "axios";
 import backIcon from "../../assets/icons/arrow_back-24px.svg";
 import { Link } from "react-router-dom";
 import API_URL from "../../utils";
+import PageHeader from "../PageHeader/PageHeader";
+import edit from "../../assets/icons/edit-white-24px.svg";
 
 function InventoryDetails() {
     const { id } = useParams();
@@ -34,22 +36,7 @@ function InventoryDetails() {
     return (
         <div className="inventories">
             <div>
-                <div className="inventories__header">
-                    <Link to={`/inventorylist`}>
-                        <img
-                            src={backIcon}
-                            alt="Back Icon"
-                            className="edit-warehouse__back-icon"
-                        />
-                    </Link>
-                    <h1 className="inventories__title">{inventoryData.item_name}</h1>
-                    <form className="inventories__form">
-                        <button className="inventories__button">
-                            <h3>Edit</h3>
-                        </button>
-                    </form>
-                </div>
-
+                <PageHeader text={inventoryData.item_name} srcLeft={backIcon} srcRight={edit} btnImg={edit} btnTxt="Edit"/>
                 {/* //MOBILE */}
                 <div className="inventories-sections__mobile">
                     <div className="inventories-sections__left">
