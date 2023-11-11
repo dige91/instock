@@ -1,7 +1,12 @@
+import AddInventory from "../../components/AddInventory/AddInventory";
 import './Inventory.scss';
 
 const Inventory = ()=> {
-    return ("placeholder");
+    return (
+    <>
+                 Loading ...
+    </>
+    );
 }
 
 export default Inventory;
