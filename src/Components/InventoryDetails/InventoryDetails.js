@@ -17,7 +17,7 @@ function InventoryDetails() {
         const fetchData = async () => {
             try {
                 const {data} = await axios.get(
-                    `${API_URL}/api/warehouses/${id}/inventories`
+                    `${API_URL}/api/inventories/${id}`
                 );
                 console.log(data);
                 setInventoryData(data);
@@ -29,7 +29,7 @@ function InventoryDetails() {
     }, []);
 
 
-    console.log(inventoryData[0].warehouse_id);
+    console.log(inventoryData.warehouse_id);
 
     return (
         <div className="inventories">
@@ -42,7 +42,7 @@ function InventoryDetails() {
                             className="edit-warehouse__back-icon"
                         />
                     </Link>
-                    <h1 className="inventories__title">{inventoryData[0].item_name}</h1>
+                    <h1 className="inventories__title">{inventoryData.item_name}</h1>
                     <form className="inventories__form">
                         <button className="inventories__button">
                             <h3>Edit</h3>
@@ -55,22 +55,22 @@ function InventoryDetails() {
                     <div className="inventories-sections__left">
                         <div>
                             <h4>INVENTORY DESCRIPTION:</h4>
-                            <h3>{inventoryData[0].description}</h3>
+                            <h3>{inventoryData.description}</h3>
                         </div>
                         <div>
                             <h4>CATEGORY:</h4>
-                            <h3>{inventoryData[0].category}</h3>
+                            <h3>{inventoryData.category}</h3>
                         </div>
                     </div>
                     <div className="inventories-sections__right">
                         <div className="inventories-sections__right-top">
                             <div className="inventories-sections__status">
                                 <h4>STATUS:</h4>
-                                <h3>{inventoryData[0].status}</h3>
+                                <h3>{inventoryData.status}</h3>
                             </div>
                             <div>
                                 <h4>QUANTITY:</h4>
-                                <h3>{inventoryData[0].quantity}</h3>
+                                <h3>{inventoryData.quantity}</h3>
                             </div>
                         </div>
                         <div>
@@ -85,22 +85,22 @@ function InventoryDetails() {
                     <div className="inventories-sections__left">
                         <div>
                             <h4>INVENTORY DESCRIPTION:</h4>
-                            <h3>{inventoryData[0].description}</h3>
+                            <h3>{inventoryData.description}</h3>
                         </div>
                         <div>
                             <h4>CATEGORY:</h4>
-                            <h3>{inventoryData[0].category}</h3>
+                            <h3>{inventoryData.category}</h3>
                         </div>
                     </div>
                     <div className="inventories-sections__right">
                         <div className="inventories-sections__right-top">
                             <div className="inventories-sections__status">
                                 <h4>STATUS:</h4>
-                                <h3>{inventoryData[0].status}</h3>
+                                <h3>{inventoryData.status}</h3>
                             </div>
                             <div>
                                 <h4>QUANTITY:</h4>
-                                <h3>{inventoryData[0].quantity}</h3>
+                                <h3>{inventoryData.quantity}</h3>
                             </div>
                         </div>
                         <div>

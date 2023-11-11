@@ -33,9 +33,10 @@ function App() {
         <Routes>
           <Route path='/' element={<Warehouse warehouses={warehouses} setWarehouses={setWarehouses}/>} />
           <Route path='/inventory' element={<Inventory/>} />
+          <Route path='/inventory/:id' element={<InventoryDetails warehouses={warehouses}/>} />
           <Route path='/add-a-warehouse' element={<AddWarehouse />} />
           <Route path='/edit-warehouse/:id' element={<EditWarehouse />} />
-          <Route path='/warehouse-info/:id' element={<InventoryDetails warehouses={warehouses}/>} />
+          <Route path='/warehouse-info/:id' element={<WarehouseInfo warehouses={warehouses}/>} />
           <Route path='edit-inventory-item' element={<EditInventoryItem />} />
         </Routes>
       <Footer />
