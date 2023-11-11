@@ -11,6 +11,7 @@ import WarehouseInfo from './components/WarehouseInfo/WarehouseInfo';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import EditInventoryItem from './components/EditInventoryItem/EditInventoryItem';
+import InventoryDetails from './components/InventoryDetails/InventoryDetails';
 
 
 function App() {
@@ -31,9 +32,10 @@ function App() {
       <BrowserRouter>
       <Header />
         <Routes>
-          <Route path= '/inventory' element={<Inventory warehouses={warehouses}/>} />
           <Route path= 'add-an-item' element={<AddInventory warehouses={warehouses} setWarehouses={setWarehouses}/>} />
           <Route path='/' element={<Warehouse warehouses={warehouses} setWarehouses={setWarehouses}/>} />
+          <Route path='/inventory' element={<Inventory/>} />
+          <Route path='/inventory/:id' element={<InventoryDetails warehouses={warehouses}/>} />
           <Route path='/add-a-warehouse' element={<AddWarehouse />} />
           <Route path='/edit-warehouse/:id' element={<EditWarehouse />} />
           <Route path='/warehouse-info/:id' element={<WarehouseInfo warehouses={warehouses}/>} />
