@@ -1,0 +1,24 @@
+@use '../../styles/partials/mixin' as * ;
+@use '../../styles/partials/colors' as * ;
+@use '../../styles/partials/variables' as * ;
+
+.page-header {
+    padding: 1rem;
+    display: flex;
+    background-color: $white;
+    @include divider;
+    
+
+    &__heading{
+        @include page-header-padding;
+        @include page-header-font;
+    }
+    &__img1{
+        width: 10%;
+        
+
+        @include tablet {
+            width: 5%;
+        }
+    }
+}
