@@ -1,8 +1,7 @@
 import React from 'react';
 import './ItemAvailabilityEdit.scss';
 
-function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuantity, setWarehouse, warehouse }) {
-    console.log(status, warehouse)
+function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuantity, setWarehouseName, warehouseName }) {
     const handleChangeStatus = (event) => {
         setStatus(event.target.value);
     };
@@ -12,17 +11,18 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
     };
 
     const handleChangeWarehouse = (event) => {
-        setWarehouse(event.target.value);
+        setWarehouseName(event.target.value);
     };
 
     if (warehouses) {
         return (
             <section className='item-availability'>
                 <h2 className='item-availability__heading'>Item Availability</h2>
-                <fieldset className='item-availability__fieldset' onChange={handleChangeStatus}>
-                    <legend className='item-availability__label'>Status</legend>
+
+                <div className='item-availability__status'>
+                    <label className='item-availability__label'>Status</label>
                     <div className='item-availability__status-container'>
-                        <div className='item-availability__instock'>
+                        <div>
                             <input
                                 className='item-availability__radio'
                                 type="radio"
@@ -34,7 +34,7 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
                             />
                             <label className='item-availability__label' htmlFor="inStock">In Stock</label>
                         </div>
-                        <div className='item-availability__out-of-stock'>
+                        <div>
                             <input
                                 className='item-availability__radio'
                                 type="radio"
@@ -47,7 +47,8 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
                             <label className='item-availability__label' htmlFor="outOfStock">Out of Stock</label>
                         </div>
                     </div>
-                </fieldset>
+                </div>
+
                 {status === 'inStock' && (
                     <div className='item-availability__quantity-container'>
                         <label className='item-availability__label'>Quantity</label>
@@ -59,20 +60,23 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
                     </div>
                 )}
 
-                <label className='item-availability__label' htmlFor='warehouse'>Warehouse</label>
-                <select
-                    className='item-availability__input item-availability__input--select'
-                    name="warehouse"
-                    value={warehouse}
-                    onChange={handleChangeWarehouse}
-                >
-                    {warehouses?.map((warehouse) => (
-                        <option key={warehouse.id} value={warehouse.id}>
-                            {warehouse.warehouse_name}
-                        </option>
-                    ))}
-                </select>
+                <div className='item-availability__warehouse-container'>
+                    <label className='item-availability__label' htmlFor='warehouse'>Warehouse</label>
+                    <select
+                        className='item-availability__input item-availability__input--select'
+                        name="warehouse"
+                        value={warehouseName}
+                        onChange={handleChangeWarehouse}
+                    >
+                        <option value="">{warehouseName}</option>
 
+                        {warehouses?.map((warehouse) => (
+                            <option key={warehouse.id} value={warehouse.warehouse_name}>
+                                {warehouse.warehouse_name}
+                            </option>
+                        ))}
+                    </select>
+                </div>
             </section>
         );
     }

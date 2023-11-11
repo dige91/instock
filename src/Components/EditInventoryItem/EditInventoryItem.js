@@ -10,7 +10,7 @@ import ButtonAlternate from '../ButtonAlternate/ButtonAlternate';
 import Button from '../Button/Button';
 import './EditInventoryItem.scss';
 
-function EditInventoryItem({warehouses}) {
+function EditInventoryItem({ warehouses }) {
     const { id } = useParams();
     const formRef = useRef(null);
     const [item, setItem] = useState({});
@@ -19,19 +19,20 @@ function EditInventoryItem({warehouses}) {
     const [category, setCategory] = useState("");
     const [status, setStatus] = useState("outOfStock");
     const [quantity, setQuantity] = useState(0);
-    const [warehouse, setWarehouse] = useState("");
+    const [warehouseName, setWarehouseName] = useState("");
+
 
     useEffect(() => {
         const fetchItem = async () => {
             try {
-                const response = await axios.get(`${API_URL}/api/inventories/12`);
-                const { item_name, description, category, status, quantity, warehouse } = response.data;
+                const response = await axios.get(`${API_URL}/api/inventories/66`);
+                const { item_name, description, category, status, quantity, warehouse_name } = response.data;
                 setItem_name(item_name || "");
                 setDescription(description || "");
                 setCategory(category || "");
                 setStatus(status || "outOfStock");
                 setQuantity(quantity || 0);
-                setWarehouse(warehouse || "");
+                setWarehouseName(warehouse_name || "");
             } catch (error) {
                 console.error("Error fetching inventory item details:", error);
             }
@@ -52,11 +53,11 @@ function EditInventoryItem({warehouses}) {
                 category,
                 status,
                 quantity,
+                warehouseName
             };
             alert('Success');
         }
     };
-
     return (
         <section className='main-section'>
             <PageHeaderNoIcon srcLeft={backButton} text={'Edit Inventory Item'} />
@@ -76,8 +77,8 @@ function EditInventoryItem({warehouses}) {
                         quantity={quantity}
                         setQuantity={setQuantity}
                         warehouses={warehouses}
-                        warehouse={warehouse}
-                        setWarehouse={setWarehouse}
+                        warehouseName={warehouseName}
+                        setWarehouseName={setWarehouseName}
                     />
                 </div>
 
