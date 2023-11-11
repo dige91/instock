@@ -3,16 +3,11 @@ import '../../App.scss';
 import WarehouseItem from '../../components/WarehouseItem/WarehouseItem';
 import { Link } from 'react-router-dom';
 import sort from '../../assets/icons/sort-24px.svg';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-// const REACT_APP_BACKEND_URL = "http://localhost:8080/warehouse";
 
 const Warehouse = ({warehouses , setWarehouses}) => {
     console.log(warehouses)
 
     if (warehouses){
-
-    
     return (
         <>
             <div className="warehouses">
