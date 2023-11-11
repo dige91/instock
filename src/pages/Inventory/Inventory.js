@@ -4,7 +4,7 @@ import './Inventory.scss';
 const Inventory = ()=> {
     return (
     <>
-        <AddInventory />
+                 Loading ...
     </>
     );
 }

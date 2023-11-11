@@ -1,6 +1,5 @@
 @use '../../styles/partials/mixin' as *;
 @use '../../styles/partials/colors' as *;
-<<<<<<< HEAD
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/typography' as *;
 
@@ -34,6 +33,15 @@
         padding: 0 1rem;
         border: none;
         border:1px solid $cloud;
+        
+        &--select{
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('../../assets/icons/arrow_drop_down-24px.svg');
+            background-repeat: no-repeat;
+            background-position: calc(100% - 1.25rem) center;
+        }
 
         @include tablet {
             height: 2.375rem;
@@ -46,13 +54,4 @@
             height: 5rem;
         }
     }
-=======
-
-.Item{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 1rem;
-    border-bottom: 1px $cloud solid;
->>>>>>> develop
 }

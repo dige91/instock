@@ -31,8 +31,8 @@ function App() {
       <BrowserRouter>
       <Header />
         <Routes>
-          <Route path= '/inventory' element={<Inventory/>} />
-          <Route path= 'add-an-item' element={<AddInventory/>} />
+          <Route path= '/inventory' element={<Inventory warehouses={warehouses}/>} />
+          <Route path= 'add-an-item' element={<AddInventory warehouses={warehouses} setWarehouses={setWarehouses}/>} />
           <Route path='/' element={<Warehouse warehouses={warehouses} setWarehouses={setWarehouses}/>} />
           <Route path='/add-a-warehouse' element={<AddWarehouse />} />
           <Route path='/edit-warehouse/:id' element={<EditWarehouse />} />

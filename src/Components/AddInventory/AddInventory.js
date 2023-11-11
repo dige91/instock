@@ -7,8 +7,11 @@ import { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import API_URL from '../../utils'
 import { Link } from 'react-router-dom';
+import PageHeader from '../PageHeader/PageHeader'
+import backButton from '../../assets/icons/arrow_back-24px.svg'
+import PageHeaderNoIcon from '../PageHeaderNoIcon/PageHeaderNoIcon'
 
-function AddInventory() {
+function AddInventory({warehouses}) {
 
 
     const [item_name, setItem_name] = useState("");
@@ -24,7 +27,7 @@ function AddInventory() {
 
     useEffect(() => {
         async function postInventory() {
-            const response = await axios.post(API_URL + '/inventory', newItem);
+            const response = await axios.post(API_URL + '/api/inventories', newItem);
         }
         if (newItem) {
             postInventory();
@@ -68,10 +71,11 @@ function AddInventory() {
         }
     }
 
-
     return (
-        <form className='form' onSubmit={handleSubmit}>
-            <div className='form__input-container'>
+    <section className='main-section'>
+        <PageHeaderNoIcon srcLeft={backButton} text={'Add New Inventory Item'} />
+        <form className='main-section-form' onSubmit={handleSubmit}>
+            <div className='main-section-form__input-container'>
                 <ItemDetails 
                     item_name={item_name}
                     setItem_name={setItem_name}
@@ -85,16 +89,18 @@ function AddInventory() {
                     setStatus={setStatus}
                     quantity={quantity} 
                     setQuantity={setQuantity}
+                    warehouses={warehouses}
                     warehouse={warehouse}
                     setWarehouse={setWarehouse}
                 />
             </div>
 
-            <div className='form__button-container'>
-                <Link to='/' className='form__link'><ButtonAlternate text='cancel' /></Link>
+            <div className='main-section-form__button-container'>
+                <Link to='/' className='main-section-form__link'><ButtonAlternate text='cancel' /></Link>
                 <Button type='submit' text='+ Add a Warehouse' />
             </div>
         </form>
+        </section>
     )
 }
 

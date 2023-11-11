@@ -5,6 +5,7 @@ import ItemAvailability from '../ItemAvailability/ItemAvailability';
 import ButtonAlternate from '../ButtonAlternate/ButtonAlternate';
 import Button from '../Button/Button';
 import arrow from '../../assets/icons/arrow_back-24px.svg';
+import edit from '../../assets/icons/edit-white-24px.svg'
 
 
 const item = {

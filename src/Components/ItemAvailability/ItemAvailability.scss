@@ -13,7 +13,6 @@
     @include tablet {
         width:50%;
         border: none;
-        border-right: $cloud .1rem solid;
 
     }
     &__heading{
@@ -44,6 +43,15 @@
         padding: 0 1rem;
         border: none;
         border:1px solid $cloud;
+        
+        &--select{
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('../../assets/icons/arrow_drop_down-24px.svg');
+            background-repeat: no-repeat;
+            background-position: calc(100% - 1.25rem) center;
+        }
 
         @include tablet {
             height: 2.375rem;
