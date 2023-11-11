@@ -1,10 +1,11 @@
+import { Navigate } from 'react-router-dom'
 import  './ButtonAlternate.scss'
 
 
-function ButtonAlternate ({text,src, type}) {
+function ButtonAlternate ({text, type}) {
     return (
         <>
-            <button className='button-alt'><img className='button__image' type={type} src={src} />{text}</button>
+            <button className='button-alt'>{text}</button>
         </>
     )
 }

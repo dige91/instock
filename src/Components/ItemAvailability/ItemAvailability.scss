@@ -1,0 +1,68 @@
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+.item-availability {
+    margin: 1rem 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.5rem 1rem;
+
+    @include tablet {
+        width:50%;
+        border: none;
+
+    }
+    &__heading{
+        @include section-header-padding;
+        @include subheader-font;
+        padding-top: 0;
+    }
+    &__label{
+        @include label-padding;
+        padding-right: 2rem;
+        @include buttonLabel-font;
+    }
+    &__fieldset{
+        border: none;
+    }
+    &__status-container{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__radio{
+        margin-right: .5rem;
+    }
+
+    &__input{
+        height:2.25rem;
+        width: 100%;
+        border-radius: 1.25rem;
+        padding: 0 1rem;
+        border: none;
+        border:1px solid $cloud;
+        
+        &--select{
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('../../assets/icons/arrow_drop_down-24px.svg');
+            background-repeat: no-repeat;
+            background-position: calc(100% - 1.25rem) center;
+        }
+
+        @include tablet {
+            height: 2.375rem;
+        }
+        &::placeholder {
+          color:  $instock-black;
+          font-family: 'Titillium';
+        }
+    }
+}
+
+.hidden{
+    display: none;
+}
