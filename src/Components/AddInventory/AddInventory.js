@@ -46,7 +46,6 @@ function AddInventory({warehouses}) {
                 quantity,
                 warehouse_id: warehouse
             }
-            console.log(inputedItem)
             return;
         } else {
             const inputedItem = {

@@ -15,7 +15,6 @@ const WarehouseItem = ({ warehouse ,setWarehouses, id }) => {
             </>
         )
     }
-    console.log(warehouse)
     
     return (
         <>

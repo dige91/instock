@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import sort from '../../assets/icons/sort-24px.svg';
 
 const Warehouse = ({warehouses , setWarehouses}) => {
-    console.log(warehouses)
 
     if (warehouses){
     return (

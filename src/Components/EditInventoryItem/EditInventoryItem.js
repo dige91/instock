@@ -4,14 +4,13 @@ import axios from 'axios';
 import API_URL from '../../utils';
 import backButton from '../../assets/icons/arrow_back-24px.svg';
 import PageHeaderNoIcon from '../PageHeaderNoIcon/PageHeaderNoIcon';
-import ItemDetails from '../ItemDetails/ItemDetails';
-import ItemAvailability from '../ItemAvailability/ItemAvailability';
+import ItemDetailsEdit from '../ItemDetailsEdit/ItemDetailsEdit';
+import ItemAvailabilityEdit from '../ItemAvailabilityEdit/ItemAvailabilityEdit';
 import ButtonAlternate from '../ButtonAlternate/ButtonAlternate';
 import Button from '../Button/Button';
 import './EditInventoryItem.scss';
 
 function EditInventoryItem({warehouses}) {
-    console.log(warehouses);
     const { id } = useParams();
     const formRef = useRef(null);
     const [item, setItem] = useState({});
@@ -25,14 +24,14 @@ function EditInventoryItem({warehouses}) {
     useEffect(() => {
         const fetchItem = async () => {
             try {
-                const response = await axios.get(`${API_URL}/api/inventories/2`);
-                const { item_name, description, category, status, quantity, warehouse_id } = response.data;
+                const response = await axios.get(`${API_URL}/api/inventories/12`);
+                const { item_name, description, category, status, quantity, warehouse } = response.data;
                 setItem_name(item_name || "");
                 setDescription(description || "");
                 setCategory(category || "");
                 setStatus(status || "outOfStock");
                 setQuantity(quantity || 0);
-                setWarehouse(warehouse_id || "");
+                setWarehouse(warehouse || "");
             } catch (error) {
                 console.error("Error fetching inventory item details:", error);
             }
@@ -54,7 +53,6 @@ function EditInventoryItem({warehouses}) {
                 status,
                 quantity,
             };
-            console.log(updatedItem);
             alert('Success');
         }
     };
@@ -64,7 +62,7 @@ function EditInventoryItem({warehouses}) {
             <PageHeaderNoIcon srcLeft={backButton} text={'Edit Inventory Item'} />
             <form className='main-section-form' onSubmit={handleSubmit}>
                 <div className='main-section-form__input-container'>
-                    <ItemDetails
+                    <ItemDetailsEdit
                         item_name={item_name}
                         setItem_name={setItem_name}
                         description={description}
@@ -72,7 +70,7 @@ function EditInventoryItem({warehouses}) {
                         category={category}
                         setCategory={setCategory}
                     />
-                    <ItemAvailability
+                    <ItemAvailabilityEdit
                         status={status}
                         setStatus={setStatus}
                         quantity={quantity}
