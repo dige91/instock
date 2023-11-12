@@ -30,6 +30,7 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
                                 name="status"
                                 value="inStock"
                                 checked={status === 'inStock'}
+                                // defaultChecked={status === 'inStock'}
                                 onChange={handleChangeStatus}
                             />
                             <label className='item-availability__label' htmlFor="inStock">In Stock</label>
@@ -41,6 +42,7 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
                                 id="outOfStock"
                                 name="status"
                                 value="outOfStock"
+                                // defaultChecked={status === 'outOfStock'}
                                 checked={status === 'outOfStock'}
                                 onChange={handleChangeStatus}
                             />
@@ -55,6 +57,8 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
                         <input
                             className='item-availability__input'
                             value={quantity}
+                            name="quantity"
+                            id="quantity"
                             onChange={handleChangeQuantity}
                         />
                     </div>
@@ -64,7 +68,8 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
                     <label className='item-availability__label' htmlFor='warehouse'>Warehouse</label>
                     <select
                         className='item-availability__input item-availability__input--select'
-                        name="warehouse"
+                        name="warehouseName"
+                        id="warehouseName"
                         value={warehouseName}
                         onChange={handleChangeWarehouse}
                     >

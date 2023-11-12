@@ -25,8 +25,9 @@ function EditInventoryItem({ warehouses }) {
     useEffect(() => {
         const fetchItem = async () => {
             try {
-                const response = await axios.get(`${API_URL}/api/inventories/66`);
+                const response = await axios.get(`${API_URL}/api/inventories/62`);
                 const { item_name, description, category, status, quantity, warehouse_name } = response.data;
+                setItem(response.data);
                 setItem_name(item_name || "");
                 setDescription(description || "");
                 setCategory(category || "");
@@ -41,27 +42,51 @@ function EditInventoryItem({ warehouses }) {
         fetchItem();
     }, [id]);
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        if (!item_name || !description || !category || typeof quantity !== 'number') {
-            alert("You must fill out all fields");
-            return;
-        } else {
-            const updatedItem = {
-                item_name,
-                description,
-                category,
-                status,
-                quantity,
-                warehouseName
-            };
-            alert('Success');
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+
+        const form = formRef.current;
+        const item_name = form.item_name.value;
+        const description = form.description.value;
+        const category = form.category.value;
+        const status = form.status.value;
+        if (status === "In Stock"){
+            let quantity = form.quantity.value
         }
+        else{
+            quantity = '0';
+        }
+        const warehouseName = form.warehouseName.value;
+
+        const warehouseObject = warehouses.find(warehouse => warehouse.warehouse_name === warehouseName);
+        const warehouse_id = warehouseObject ? warehouseObject.warehouse_id : null;
+
+        const updatedItem = {
+            item_name: item_name,
+            description: description,
+            category: category,
+            status: status,
+            quantity: quantity,
+            warehouseName: warehouseName,
+            warehouse_id: warehouse_id
+        };
+        console.log(updatedItem);
+        try {
+            await axios.put(`${API_URL}/api/inventories/62`, updatedItem);
+            alert('Success');
+            window.location.href = '/';
+        } catch (error) {
+            console.error('Error updating inventory item:', error);
+            console.log("error response:", error.response);
+            alert('Failed to update inventory item. Please try again.');
+        }
+
     };
+
     return (
         <section className='main-section'>
             <PageHeaderNoIcon srcLeft={backButton} text={'Edit Inventory Item'} />
-            <form className='main-section-form' onSubmit={handleSubmit}>
+            <form className='main-section-form' onSubmit={handleSubmit} ref={formRef}>
                 <div className='main-section-form__input-container'>
                     <ItemDetailsEdit
                         item_name={item_name}
