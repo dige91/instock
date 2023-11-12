@@ -4,7 +4,6 @@
 .form{
     display: flex;
     flex-direction: column;
-    @include section-padding;
     
     &__input-container{
         box-shadow: 1px 1px 5px $cloud ;

@@ -29,7 +29,7 @@ const DeleteInventory = ({classNm, setInventory, id}) => {
     }
 
     return(
-        <div>
+        <div className="deleteinventory">
             <img src={Delete} onClick={toggleModal} />
 
             {modal && (
