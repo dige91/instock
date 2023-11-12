@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import API_URL from '../../utils'
 import { Link } from 'react-router-dom';
+import PageHeaderNoIcon from '../PageHeaderNoIcon/PageHeaderNoIcon'
 
 function AddWarehouse() {
 
@@ -63,6 +64,8 @@ function AddWarehouse() {
 
 
     return (
+        <section className='form-container'>
+        <PageHeaderNoIcon text='Add Warehouse' />
         <form className='form' ref={formRef} onSubmit={handleSubmit}>
             <div className='form__input-container'>
                 <WarehouseDetails />
@@ -74,6 +77,7 @@ function AddWarehouse() {
                 <Button type='submit' text='+ Add a Warehouse' />
             </div>
         </form>
+        </section>
     )
 }
 

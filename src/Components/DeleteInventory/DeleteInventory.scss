@@ -3,6 +3,7 @@
 @use '../../styles/partials/typography' as *;
 
 .deleteinventory{
+   display: flex;
     &__overlay{
       background-color: $light-grey;
       width: 100vw;

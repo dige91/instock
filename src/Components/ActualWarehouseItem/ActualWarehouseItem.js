@@ -4,9 +4,10 @@ import edit from '../../assets/icons/edit-24px.svg'
 import forward from '../../assets/icons/chevron_right-24px.svg'
 import './ActualWarehouseItem.scss'
 import WarehouseDetails from '../WarehouseDetails/WarehouseDetails'
+import { Link } from 'react-router-dom'
 
 
-function ActualWarehouseItem ({warehouseDetails}){
+function ActualWarehouseItem ({warehouseDetails, itemId}){
 
 
     if (!warehouseDetails){
@@ -20,10 +21,14 @@ function ActualWarehouseItem ({warehouseDetails}){
         <>
             <div className='warehouse-item'>
                 <div className='warehouse-item__stat-block'>
-                    <h3 className='warehouse-item__label'>INVENTORY ITEM</h3>
                     <div className='warehouse-item__title-container'>
-                        <p className='warehouse-item__title'>{warehouseDetails.item_name}</p>
-                        <img src={forward}/>
+                    <h3 className='warehouse-item__label'>INVENTORY ITEM</h3>
+                        <img className='warehouse-item__label--image' src={forward}/>
+                    </div>
+                    
+                    <div className='warehouse-item__title-container'>
+                    <Link className='warehouse-item__link' to={`/inventory/${itemId}`}><p className='warehouse-item__title'>{warehouseDetails.item_name}</p>
+                        <img src={forward}/></Link>
                     </div>
                 </div>
                 <div className='warehouse-item__stat-block'>
@@ -39,8 +44,10 @@ function ActualWarehouseItem ({warehouseDetails}){
                     <p className='warehouse-item__text'>{warehouseDetails.quantity}</p>
                 </div>
                 <div className='warehouse-item__stat-block warehouse-item__stat-block--icons'>
-                    <DeleteInventory />
-                    <img className='warehouse-item__edit-icon' src={edit}/>
+                    <div className='warehouse-item__icon-block'>
+                        <DeleteInventory />
+                        <img className='warehouse-item__edit-icon' src={edit}/>
+                    </div>
                 </div>
             </div>
         </>

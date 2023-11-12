@@ -7,11 +7,31 @@
     padding: 1rem 1.5rem ;
     @include divider;
 
+    &__text{
+        color: $instock-black;
+    }
+
     &__label{
         @include table-header-font;
         @include label-padding;
         color: $slate ;
-        
+
+        @include tablet {
+            display: none;
+        }  
+        &--image{
+            display: none;
+        } 
+    }
+    &:first-child{
+        .warehouse-item__label{
+            display: unset;
+        }
+    }
+    &__icon-block{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
     }
     &__stat-block{
         width:50%;
@@ -19,12 +39,30 @@
         flex-direction: column;
         padding-bottom: .625rem;
 
+        @include tablet {
+            width: 22%;
+        }
+
         &--icons{
             width: 100%;
             display: flex;
             justify-content: space-between;
             flex-direction: row;
+
+            @include tablet {
+                width: 10%;
+                flex-direction: column;
+                justify-content: unset;
+            }
         }
+        
+    }
+    &__link{
+        display: flex;
+        color: $instock-black;
+    }
+    &__edit-icon{
+        max-width: 24px;
     }
 
     &__title-container{
