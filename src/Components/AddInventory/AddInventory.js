@@ -7,7 +7,6 @@ import { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import API_URL from '../../utils'
 import { Link } from 'react-router-dom';
-import PageHeader from '../PageHeader/PageHeader'
 import backButton from '../../assets/icons/arrow_back-24px.svg'
 import PageHeaderNoIcon from '../PageHeaderNoIcon/PageHeaderNoIcon'
 
@@ -34,11 +33,6 @@ function AddInventory({warehouses}) {
         }
     }, [newItem]);
 
-    
-     
-      
-
-
     const handleSubmit = (event) => {
         event.preventDefault()
 
@@ -52,7 +46,6 @@ function AddInventory({warehouses}) {
                 quantity,
                 warehouse_id: warehouse
             }
-            console.log(inputedItem)
             return;
         } else {
             const inputedItem = {
