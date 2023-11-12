@@ -21,6 +21,7 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
 
                 <div className='item-availability__status'>
                     <label className='item-availability__label'>Status</label>
+                    
                     <div className='item-availability__status-container'>
                         <div>
                             <input
@@ -30,7 +31,6 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
                                 name="status"
                                 value="inStock"
                                 checked={status === 'inStock'}
-                                // defaultChecked={status === 'inStock'}
                                 onChange={handleChangeStatus}
                             />
                             <label className='item-availability__label' htmlFor="inStock">In Stock</label>
@@ -42,7 +42,6 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
                                 id="outOfStock"
                                 name="status"
                                 value="outOfStock"
-                                // defaultChecked={status === 'outOfStock'}
                                 checked={status === 'outOfStock'}
                                 onChange={handleChangeStatus}
                             />
