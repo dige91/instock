@@ -1,15 +1,11 @@
 @use '../../styles/partials/mixin' as *;
 @use '../../styles/partials/colors' as *;
 
-
-
 .main-section{
     @include section-padding;
     position: relative;
     bottom: 100px;
 }
-
-
 
 .main-section-form{
     display: flex;
