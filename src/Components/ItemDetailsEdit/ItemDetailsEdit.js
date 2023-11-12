@@ -29,7 +29,7 @@ function ItemDetailsEdit({item_name, description, category, setItem_name, setDes
             />
 
             <label className='item-details__label' htmlFor='description'>Description</label>
-            <input className='item-details__input item-details__input--large' type='text' id='description' name='description'
+            <textarea className='item-details__input item-details__input--large' type='text' id='description' name='description'
                 onChange={handleChangeDescription} value={description}
             />
             <label className='item-details__label' htmlFor='category' > Category</label>

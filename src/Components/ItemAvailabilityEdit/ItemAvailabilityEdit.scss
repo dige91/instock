@@ -8,7 +8,6 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    padding: 0 1.5rem 1rem;
 
     @include tablet {
         width: 50%;
@@ -35,6 +34,7 @@
     &__status-container {
         display: flex;
         justify-content: space-between;
+        padding-bottom: 1rem;
     }
 
     &__radio {
