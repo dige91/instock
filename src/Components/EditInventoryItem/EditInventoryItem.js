@@ -27,14 +27,14 @@ function EditInventoryItem({ warehouses }) {
         const fetchItem = async () => {
             try {
                 const response = await axios.get(`${API_URL}/api/inventories/17`);
-                const { item_name, description, category, status, quantity, warehouse_name, warehouseId } = response.data;
+                const { item_name, description, category, status, quantity, warehouse_name, warehouse_id } = response.data;
                 setItem(response.data);
                 setItem_name(item_name || "");
                 setDescription(description || "");
                 setCategory(category || "");
                 setStatus(status || "outOfStock");
                 setQuantity(quantity || 0);
-                setWarehouseName(warehouse_name || "");
+                setWarehouseName(warehouse_id || "");
                 setWarehouseId(warehouseId || 0);
 
             } catch (error) {
@@ -66,8 +66,7 @@ function EditInventoryItem({ warehouses }) {
             category: category,
             status: status,
             quantity: quantity,
-            warehouseName: warehouseName,
-            warehouse_id: warehouseId
+            warehouse_id: warehouseName
         };
         console.log(updatedItem);
         try {
@@ -103,6 +102,8 @@ function EditInventoryItem({ warehouses }) {
                         warehouses={warehouses}
                         warehouseName={warehouseName}
                         setWarehouseName={setWarehouseName}
+                        warehouseId={warehouseId}
+                        setWarehouseId={setWarehouseId}
                     />
                 </div>
 

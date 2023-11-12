@@ -1,7 +1,7 @@
 import React from 'react';
 import './ItemAvailabilityEdit.scss';
 
-function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuantity, setWarehouseName, warehouseName }) {
+function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuantity, setWarehouseName, warehouseName, setWarehouseId }) {
     const handleChangeStatus = (event) => {
         setStatus(event.target.value);
     };
@@ -29,8 +29,6 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
                                 id="inStock"
                                 name="status"
                                 value="inStock"
-                                checked={status === 'inStock'}
-                                // defaultChecked={status === 'inStock'}
                                 onChange={handleChangeStatus}
                             />
                             <label className='item-availability__label' htmlFor="inStock">In Stock</label>
@@ -42,8 +40,7 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
                                 id="outOfStock"
                                 name="status"
                                 value="outOfStock"
-                                // defaultChecked={status === 'outOfStock'}
-                                checked={status === 'outOfStock'}
+                                defaultChecked
                                 onChange={handleChangeStatus}
                             />
                             <label className='item-availability__label' htmlFor="outOfStock">Out of Stock</label>
@@ -70,13 +67,13 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
                         className='item-availability__input item-availability__input--select'
                         name="warehouseName"
                         id="warehouseName"
-                        value={warehouseName}
+                        defaultValue={warehouseName}
                         onChange={handleChangeWarehouse}
                     >
-                        <option value="">{warehouseName}</option>
+                    
 
                         {warehouses?.map((warehouse) => (
-                            <option key={warehouse.id} value={warehouse.warehouse_name}>
+                            <option key={warehouse.id} value={warehouse.id}>
                                 {warehouse.warehouse_name}
                             </option>
                         ))}

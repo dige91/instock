@@ -15,7 +15,7 @@ function ActualWarehouseItem ({warehouseDetails}){
         )
     }
 
-    console.log(warehouseDetails.status)
+    console.log(warehouseDetails)
     return(
         <>
             <div className='warehouse-item'>
