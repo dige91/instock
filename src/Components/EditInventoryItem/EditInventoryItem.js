@@ -20,13 +20,14 @@ function EditInventoryItem({ warehouses }) {
     const [status, setStatus] = useState("outOfStock");
     const [quantity, setQuantity] = useState(0);
     const [warehouseName, setWarehouseName] = useState("");
+    const [warehouseId, setWarehouseId] = useState(0);
 
 
     useEffect(() => {
         const fetchItem = async () => {
             try {
-                const response = await axios.get(`${API_URL}/api/inventories/62`);
-                const { item_name, description, category, status, quantity, warehouse_name } = response.data;
+                const response = await axios.get(`${API_URL}/api/inventories/17`);
+                const { item_name, description, category, status, quantity, warehouse_name, warehouseId } = response.data;
                 setItem(response.data);
                 setItem_name(item_name || "");
                 setDescription(description || "");
@@ -34,6 +35,8 @@ function EditInventoryItem({ warehouses }) {
                 setStatus(status || "outOfStock");
                 setQuantity(quantity || 0);
                 setWarehouseName(warehouse_name || "");
+                setWarehouseId(warehouseId || 0);
+
             } catch (error) {
                 console.error("Error fetching inventory item details:", error);
             }
@@ -57,9 +60,6 @@ function EditInventoryItem({ warehouses }) {
 
         const warehouseName = form.warehouseName.value;
 
-        const warehouseObject = warehouses.find(warehouse => warehouse.warehouse_name === warehouseName);
-        const warehouse_id = warehouseObject ? warehouseObject.warehouse_id : null;
-
         const updatedItem = {
             item_name: item_name,
             description: description,
@@ -67,11 +67,11 @@ function EditInventoryItem({ warehouses }) {
             status: status,
             quantity: quantity,
             warehouseName: warehouseName,
-            warehouse_id: warehouse_id
+            warehouse_id: warehouseId
         };
         console.log(updatedItem);
         try {
-            await axios.put(`${API_URL}/api/inventories/62`, updatedItem);
+            await axios.put(`${API_URL}/api/inventories/17`, updatedItem);
             alert('Success');
             window.location.href = '/';
         } catch (error) {
