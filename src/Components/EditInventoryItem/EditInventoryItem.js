@@ -50,12 +50,11 @@ function EditInventoryItem({ warehouses }) {
         const description = form.description.value;
         const category = form.category.value;
         const status = form.status.value;
+        let quantity = '0';
         if (status === "In Stock"){
-            let quantity = form.quantity.value
+            quantity = form.quantity.value
         }
-        else{
-            quantity = '0';
-        }
+
         const warehouseName = form.warehouseName.value;
 
         const warehouseObject = warehouses.find(warehouse => warehouse.warehouse_name === warehouseName);
