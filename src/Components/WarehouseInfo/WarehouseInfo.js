@@ -1,6 +1,7 @@
 import '../WarehouseInfo/WarehouseInfo.scss';
 import Back from '../../assets/icons/arrow_back-24px.svg';
 import Edit from '../../assets/icons/edit-24px.svg';
+import labelImg from '../../assets/icons/sort-24px.svg';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import API_URL from '../../utils';
@@ -68,8 +69,29 @@ const WarehouseInfo = ({ warehouses ,setWarehouses }) => {
             </div>
             </div>
             <div>
+            <div className='warehouseinfo__tablet-labels'>
+                <div className='warehouseinfo__label-container'>
+                    <h3 className='warehouseinfo__label'>INVENTORY ITEM</h3>
+                        <img className='warehouseinfo__label--image' src={labelImg}/>
+                </div>
+                <div className='warehouseinfo__label-container'>
+                    <h3 className='warehouseinfo__label'>CATEGORY</h3>
+                        <img className='warehouseinfo__label--image' src={labelImg}/>
+                </div>
+                <div className='warehouseinfo__label-container'>
+                    <h3 className='warehouseinfo__label'>STATUS</h3>
+                        <img className='warehouseinfo__label--image' src={labelImg}/>
+                </div>
+                <div className='warehouseinfo__label-container'>
+                    <h3 className='warehouseinfo__label'>QUANTITY</h3>
+                        <img className='warehouseinfo__label--image' src={labelImg}/>
+                </div>
+                <div className='warehouseinfo__label-container warehouseinfo__label-container--noImg'>
+                    <h3 className='warehouseinfo__label'>ACTIONS</h3>
+                </div>
+            </div>
             {warehouseItems.map((warehouseItem) => (
-                            <ActualWarehouseItem key={warehouseItem.id}  warehouseDetails={warehouseItem}/>
+                            <ActualWarehouseItem key={warehouseItem.id}  warehouseDetails={warehouseItem} itemId={warehouseItem.id}/>
                         ))}
             </div>
        </section>

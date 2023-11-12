@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
+import PageHeaderNoIcon from '../PageHeaderNoIcon/PageHeaderNoIcon'
 const REACT_APP_BACKEND_URL = "http://localhost:8080/warehouse";
 
 function EditWarehouse() {
@@ -67,6 +68,8 @@ function EditWarehouse() {
 
 
     return (
+        <section className='form-container'>
+        <PageHeaderNoIcon text='Edit Warehouse'/>
         <form className='form' ref={formRef} onSubmit={handleSubmit}>
             <div className='form__input-container'>
                 <WarehouseDetails />
@@ -78,6 +81,7 @@ function EditWarehouse() {
                 <Button type='submit' text='Save' />
             </div>
         </form>
+        </section>
     )
 }
 

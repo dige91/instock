@@ -43,10 +43,12 @@
     &__main{
         display: flex;
         flex-direction: column;
+        @include divider;
             @include tablet{
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-around;
+                border: none;
             }
         &-section{
             padding: 2rem 1rem;
@@ -89,6 +91,31 @@
                     color: $slate;
                 }
             }
+        }
+    }
+    &__tablet-labels{
+      padding: 1rem 1.5rem;
+      background-color: $light-grey;
+      color: $slate;
+      display: none;
+
+      @include tablet{
+        display: flex;
+      }
+    }
+    &__label-container{
+        display: flex;
+        width: 22%;
+
+        &--noImg{
+            width: 10%;
+        }
+    }
+    &__label{
+        margin-right: .25rem;
+
+        &--image{
+            height: 80%;
         }
     }
 }

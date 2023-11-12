@@ -5,15 +5,15 @@ import { useState } from "react";
 import axios from "axios";
 import '../DeleteInventory/DeleteInventory.scss'
 
-const DeleteInventory = ({classNm, setInventory, id}) => {
+const DeleteInventory = ({classNm, setInventory, id , itemDetails}) => {
     const handleDelete = (event) =>{
         event.preventDefault()
 
         const deleteInventory = async () => {
             try{
-                const response = await axios.delete(`${API_URL}/inventory/${id}`);
+                const response = await axios.delete(`${API_URL}/api/inventories/${id}`);
 
-                setInventory([]);
+                alert(`sucessfully deleted ${itemDetails.item_name}`);
 
                 window.location.href = '/inventory'
             } catch (error) {
@@ -29,7 +29,7 @@ const DeleteInventory = ({classNm, setInventory, id}) => {
     }
 
     return(
-        <div>
+        <div className="deleteinventory">
             <img src={Delete} onClick={toggleModal} />
 
             {modal && (
@@ -37,7 +37,7 @@ const DeleteInventory = ({classNm, setInventory, id}) => {
                     <div className="deleteinventory__overlay-content">
                         <div className="deleteinventory__overlay-content-top">
                             <img src={Close} onClick={toggleModal} className="deleteinventory__overlay-content-top-close"/>
-                            <h2 className="deleteinventory__overlay-content-top-header"> Delete Television Inventory Item? </h2>
+                            <h2 className="deleteinventory__overlay-content-top-header"> Delete {itemDetails.item_name} Inventory Item? </h2>
                             <p className="deleteinventory__overlay-content-top-confirm">Please confirm that youd like to delete the Television  item from the list of inventory.
                  You wont be able to undo this action</p>
                         </div>
