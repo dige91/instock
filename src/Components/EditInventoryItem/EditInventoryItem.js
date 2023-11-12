@@ -34,6 +34,7 @@ function EditInventoryItem({ warehouses }) {
                 setQuantity(quantity || 0);
                 setWarehouseName(warehouse_id || "");
                 console.log('ID :', warehouse_id)
+                console.log('Quantity :', quantity)
             } catch (error) {
                 console.error("Error fetching inventory item details:", error);
             }
@@ -68,7 +69,8 @@ function EditInventoryItem({ warehouses }) {
         try {
             await axios.put(`${API_URL}/api/inventories/17`, updatedItem);
             alert('Success');
-            window.location.href = '/';
+            console.log(updatedItem);
+            // window.location.href = '/';
         } catch (error) {
             console.error('Error updating inventory item:', error);
             console.log("error response:", error.response);

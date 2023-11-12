@@ -27,12 +27,13 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
                             <input
                                 className='item-availability__radio'
                                 type="radio"
-                                id="inStock"
+                                id="In Stock"
                                 name="status"
-                                value="inStock"
+                                value="In Stock"
+                                checked={status === 'In Stock'}
                                 onChange={handleChangeStatus}
                             />
-                            <label className='item-availability__label' htmlFor="inStock">In Stock</label>
+                            <label className='item-availability__label' htmlFor="In Stock">In Stock</label>
                         </div>
                         <div>
                             <input
@@ -41,15 +42,15 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
                                 id="outOfStock"
                                 name="status"
                                 value="outOfStock"
-                                defaultChecked
+                                checked={status === 'outOfStock'}
                                 onChange={handleChangeStatus}
                             />
                             <label className='item-availability__label' htmlFor="outOfStock">Out of Stock</label>
                         </div>
                     </div>
                 </div>
-
-                {status === 'inStock' && (
+                {console.log(quantity, status)}
+                {status === 'In Stock' && (
                     <div className='item-availability__quantity-container'>
                         <label className='item-availability__label'>Quantity</label>
                         <input
