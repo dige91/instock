@@ -33,7 +33,7 @@ function EditInventoryItem({ warehouses }) {
                 setStatus(status || "outOfStock");
                 setQuantity(quantity || 0);
                 setWarehouseName(warehouse_id || "");
-
+                console.log('ID :', warehouse_id)
             } catch (error) {
                 console.error("Error fetching inventory item details:", error);
             }
@@ -76,7 +76,7 @@ function EditInventoryItem({ warehouses }) {
         }
     };
 
-
+    console.log(warehouseName);
     return (
         <section className='main-section'>
             <PageHeaderNoIcon srcLeft={backButton} text={'Edit Inventory Item'} />
@@ -98,8 +98,7 @@ function EditInventoryItem({ warehouses }) {
                         warehouses={warehouses}
                         warehouseName={warehouseName}
                         setWarehouseName={setWarehouseName}
-                        warehouseId={warehouseId}
-                        setWarehouseId={setWarehouseId}
+                        
                     />
                 </div>
 

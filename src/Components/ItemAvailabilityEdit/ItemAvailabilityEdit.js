@@ -1,7 +1,7 @@
 import React from 'react';
 import './ItemAvailabilityEdit.scss';
 
-function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuantity, setWarehouseName, warehouseName, setWarehouseId }) {
+function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuantity, setWarehouseName, warehouseName,  }) {
     const handleChangeStatus = (event) => {
         setStatus(event.target.value);
     };
@@ -30,10 +30,6 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
                                 id="inStock"
                                 name="status"
                                 value="inStock"
-<<<<<<< HEAD
-=======
-                                checked={status === 'inStock'}
->>>>>>> 33056c967bafd0b21f0959b63604f2866cc21d9f
                                 onChange={handleChangeStatus}
                             />
                             <label className='item-availability__label' htmlFor="inStock">In Stock</label>
@@ -45,11 +41,7 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
                                 id="outOfStock"
                                 name="status"
                                 value="outOfStock"
-<<<<<<< HEAD
                                 defaultChecked
-=======
-                                checked={status === 'outOfStock'}
->>>>>>> 33056c967bafd0b21f0959b63604f2866cc21d9f
                                 onChange={handleChangeStatus}
                             />
                             <label className='item-availability__label' htmlFor="outOfStock">Out of Stock</label>
