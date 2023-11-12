@@ -24,7 +24,7 @@ function EditInventoryItem({ warehouses }) {
     useEffect(() => {
         const fetchItem = async () => {
             try {
-                const response = await axios.get(`${API_URL}/api/inventories/17`);
+                const response = await axios.get(`${API_URL}/api/inventories/13`);
                 const { item_name, description, category, status, quantity, warehouse_name, warehouse_id } = response.data;
                 setItem(response.data);
                 setItem_name(item_name || "");
@@ -33,8 +33,6 @@ function EditInventoryItem({ warehouses }) {
                 setStatus(status || "outOfStock");
                 setQuantity(quantity || 0);
                 setWarehouseName(warehouse_id || "");
-                console.log('ID :', warehouse_id)
-                console.log('Quantity :', quantity)
             } catch (error) {
                 console.error("Error fetching inventory item details:", error);
             }
@@ -67,10 +65,8 @@ function EditInventoryItem({ warehouses }) {
             warehouse_id: warehouseName
         };
         try {
-            await axios.put(`${API_URL}/api/inventories/17`, updatedItem);
+            await axios.put(`${API_URL}/api/inventories/13`, updatedItem);
             alert('Success');
-            console.log(updatedItem);
-            // window.location.href = '/';
         } catch (error) {
             console.error('Error updating inventory item:', error);
             console.log("error response:", error.response);
@@ -78,7 +74,6 @@ function EditInventoryItem({ warehouses }) {
         }
     };
 
-    console.log(warehouseName);
     return (
         <section className='main-section'>
             <PageHeaderNoIcon srcLeft={backButton} text={'Edit Inventory Item'} />

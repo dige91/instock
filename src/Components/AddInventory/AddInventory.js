@@ -3,7 +3,7 @@ import ItemDetails from '../ItemDetails/ItemDetails'
 import ButtonAlternate from '../ButtonAlternate/ButtonAlternate'
 import Button from '../Button/Button'
 import './AddInventory.scss'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import API_URL from '../../utils'
 import { Link } from 'react-router-dom';
@@ -12,17 +12,13 @@ import PageHeaderNoIcon from '../PageHeaderNoIcon/PageHeaderNoIcon'
 
 function AddInventory({warehouses}) {
 
-
     const [item_name, setItem_name] = useState("");
     const [description, setDescription] = useState("");
     const [category, setCategory] = useState("");
     const [status, setStatus] = useState("outOfStock");
     const [quantity, setQuantity] = useState(0)
     const [warehouse, setWarehouse] = useState("")
-
-
     const [newItem, setNewItem] = useState("")
-
 
     useEffect(() => {
         async function postInventory() {
@@ -60,7 +56,6 @@ function AddInventory({warehouses}) {
             setNewItem(inputedItem)
 
             alert('success')
-            // window.location.href = '/'
         }
     }
 
@@ -96,7 +91,6 @@ function AddInventory({warehouses}) {
         </section>
     )
 }
-
 
 export default AddInventory
 

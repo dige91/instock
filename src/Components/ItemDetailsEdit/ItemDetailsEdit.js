@@ -1,8 +1,6 @@
 import './ItemDetailsEdit.scss'
 
 function ItemDetailsEdit({item_name, description, category, setItem_name, setDescription, setCategory }) {
-
-
     const handleChangeItemName = (event) => {
         setItem_name(event.target.value)
     };
@@ -12,9 +10,6 @@ function ItemDetailsEdit({item_name, description, category, setItem_name, setDes
     const handleChangeCategory = (event) => {
         setCategory(event.target.value)
     };
-
-
-
     return (
         <div className='item-details'>
             <h2 className='item-details__heading'>Item Details</h2>

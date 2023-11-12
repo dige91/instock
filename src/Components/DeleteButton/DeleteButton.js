@@ -1,6 +1,5 @@
 import  './DeleteButton.scss'
 
-
 function DeleteButton ({text}) {
     return (
         <>
@@ -8,7 +7,5 @@ function DeleteButton ({text}) {
         </>
     )
 }
-
-
 
 export default DeleteButton

@@ -1,14 +1,10 @@
-import Warehouse from '../../pages/Warehouse/Warehouse'
 import DeleteInventory from '../DeleteInventory/DeleteInventory'
 import edit from '../../assets/icons/edit-24px.svg'
 import forward from '../../assets/icons/chevron_right-24px.svg'
 import './ActualWarehouseItem.scss'
-import WarehouseDetails from '../WarehouseDetails/WarehouseDetails'
 import { Link } from 'react-router-dom'
 
-
 function ActualWarehouseItem ({warehouseDetails, itemId}){
-
 
     if (!warehouseDetails){
         return(
@@ -16,7 +12,6 @@ function ActualWarehouseItem ({warehouseDetails, itemId}){
         )
     }
 
-    console.log(warehouseDetails)
     return(
         <>
             <div className='warehouse-item'>
@@ -53,6 +48,5 @@ function ActualWarehouseItem ({warehouseDetails, itemId}){
         </>
     )
 }
-
 
 export default ActualWarehouseItem

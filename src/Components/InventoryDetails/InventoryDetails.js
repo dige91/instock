@@ -13,8 +13,6 @@ function InventoryDetails() {
     const [inventoryData, setInventoryData] = useState([]);
     const [warehouseData, setWarehouseData] = useState([]);
 
-
-
     useEffect(() => {
         const fetchData = async () => {
             try {

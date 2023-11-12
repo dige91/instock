@@ -2,7 +2,8 @@
 @use '../../styles/partials/colors' as *;
 @use '../../styles/partials/typography' as *;
 
-.warehouseinfo{
+
+.warehouseinfo {
 
     border-bottom: 1px solid $light-grey;
     position: relative;
@@ -22,99 +23,115 @@
         margin: 0 10% 9.375rem 10%;
     }
 
-    &__header{
+    &__header {
         display: flex;
         justify-content: space-between;
         border-bottom: 1px solid $cloud;
         padding: 2rem 1rem;
-        &-left{
+
+        &-left {
             display: flex;
 
-            &-link{
+            &-link {
                 display: flex;
             }
 
-            &-name{
-               
-            }
+            &-name {}
 
         }
     }
-    &__main{
+
+    &__main {
         display: flex;
         flex-direction: column;
         @include divider;
-            @include tablet{
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-around;
-                border: none;
-            }
-        &-section{
+
+        @include tablet {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            border: none;
+        }
+
+        &-section {
             padding: 2rem 1rem;
-            @include tablet{
+
+            @include tablet {
                 width: 21vw;
-               
+
             }
-            @include desktop{
+
+            @include desktop {
                 width: 12vw;
             }
-            &-staticaddress{
+
+            &-staticaddress {
                 color: $slate;
-                @include tablet{
+
+                @include tablet {
                     border-right: 1px solid $cloud;
                 }
             }
-            &-address{
-                @include tablet{
+
+            &-address {
+                @include tablet {
                     border-right: 1px solid $cloud
                 }
             }
         }
-        &-contact{
+
+        &-contact {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
-            @include tablet{
+            padding-bottom: 2rem;
+
+            @include tablet {
                 justify-content: space-between;
                 width: 50%;
             }
-            &-left{
+
+            &-left {
                 display: flex;
                 flex-direction: column;
-                &-staticname{
+
+                &-staticname {
                     color: $slate;
                 }
             }
-            &-right{
-                &-staticinfo{
+
+            &-right {
+                &-staticinfo {
                     color: $slate;
                 }
             }
         }
     }
-    &__tablet-labels{
-      padding: 1rem 1.5rem;
-      background-color: $light-grey;
-      color: $slate;
-      display: none;
 
-      @include tablet{
-        display: flex;
-      }
+    &__tablet-labels {
+        padding: 1rem 1.5rem;
+        background-color: $light-grey;
+        color: $slate;
+        display: none;
+
+        @include tablet {
+            display: flex;
+        }
     }
-    &__label-container{
+
+    &__label-container {
         display: flex;
         width: 22%;
 
-        &--noImg{
+        &--noImg {
             width: 10%;
         }
     }
-    &__label{
+
+    &__label {
         margin-right: .25rem;
 
-        &--image{
+        &--image {
             height: 80%;
         }
     }

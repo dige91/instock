@@ -9,6 +9,4 @@ function Button ({text,src, type}) {
     )
 }
 
-
-
 export default Button

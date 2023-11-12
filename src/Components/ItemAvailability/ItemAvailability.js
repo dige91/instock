@@ -1,8 +1,6 @@
 import './ItemAvailability.scss'
 
 function ItemAvailability({ status, setStatus, warehouses, quantity, setQuantity, category, setWarehouse }) {
-
-
     const handleChangeStatus = (event) => {
         setStatus(event.target.value)
     };
@@ -14,8 +12,6 @@ function ItemAvailability({ status, setStatus, warehouses, quantity, setQuantity
     };
 
     if (warehouses) {
-
-
         return (
             <section className='item-availability'>
                 <h2 className='item-availability__heading'>Item Availability</h2>

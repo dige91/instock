@@ -1,6 +1,4 @@
-import { Navigate } from 'react-router-dom'
 import  './ButtonAlternate.scss'
-
 
 function ButtonAlternate ({text, type}) {
     return (
@@ -9,7 +7,5 @@ function ButtonAlternate ({text, type}) {
         </>
     )
 }
-
-
 
 export default ButtonAlternate

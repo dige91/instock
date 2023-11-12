@@ -27,8 +27,6 @@ const WarehouseItem = ({ warehouse ,setWarehouses, id }) => {
                     <img className='logo' src={chevron} alt="chevron"/>
                     </div>
                     </Link>
-                        
-
                 </div>
                 <div className="item__left-adress">
                     <h4 className='headings'>ADDRESS</h4>
@@ -37,7 +35,6 @@ const WarehouseItem = ({ warehouse ,setWarehouses, id }) => {
                         {" " + warehouse.country}</p>
                 </div>
                 <DeleteModal id={id} setWarehouses={setWarehouses} classNm=" deletemodal item__icons-delete" />
-                {/* <img className="item__icons-delete" src={del} alt="delete icon"></img> */}
             </div>
             <div className='item__right'>
                 <div className="item__right-name">
@@ -53,7 +50,6 @@ const WarehouseItem = ({ warehouse ,setWarehouses, id }) => {
                 <Link to={`/edit-warehouse/${warehouse.id}`}><img className="item__right-update" src={edit} alt="edit icon"></img></Link>
             </div>
             <div className="item__icons2">
-                {/* <img onClick={<DeleteModal/>} className="item__icons2-delete" src={del} alt="delete icon"></img> */}
                 <DeleteModal id={id} setWarehouses={setWarehouses} classNm=" deletemodal item__icons2-delete"/>
                 <Link to={`/edit-warehouse/${warehouse.id}`}><img className="item__icons2-update" src={edit} alt="edit icon"></img></Link>
             </div>

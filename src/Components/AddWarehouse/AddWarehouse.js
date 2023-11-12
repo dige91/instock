@@ -10,8 +10,6 @@ import { Link } from 'react-router-dom';
 import PageHeaderNoIcon from '../PageHeaderNoIcon/PageHeaderNoIcon'
 
 function AddWarehouse() {
-
-
     const formRef = useRef()
     const [newWarehouse, setNewWarehouse] = useState(null)
 
@@ -23,9 +21,6 @@ function AddWarehouse() {
             postWarehouse();
         }
     }, [newWarehouse]);
-
-
-
 
     const handleSubmit = (event) => {
         event.preventDefault()

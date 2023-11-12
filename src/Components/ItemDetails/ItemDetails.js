@@ -2,7 +2,6 @@ import './ItemDetails.scss'
 
 function ItemDetails ({setItem_name, setDescription, setCategory}){
 
-
     const handleChangeItemName = (event) => {
         setItem_name(event.target.value)
       };
@@ -12,8 +11,6 @@ function ItemDetails ({setItem_name, setDescription, setCategory}){
       const handleChangeCategory = (event) => {
         setCategory(event.target.value)
       };
-
-
 
     return (
             <div className='item-details'>

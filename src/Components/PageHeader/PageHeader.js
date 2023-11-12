@@ -25,6 +25,4 @@ function PageHeader ({text, srcRight , btnImg, btnTxt}) {
     )
 }
 
-
-
 export default PageHeader
