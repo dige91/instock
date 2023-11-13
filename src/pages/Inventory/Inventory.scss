@@ -1,0 +1,34 @@
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/typography' as *;
+
+
+
+.inventorylist{
+    &__tablet-labels{
+        padding: 1rem 1.5rem;
+        background-color: $light-grey;
+        color: $slate;
+        display: none;
+      
+        @include tablet{
+          display: flex;
+        }
+      }
+      &__label-container{
+          display: flex;
+          width: 22%;
+      
+          &--noImg{
+              width: 10%;
+          }
+      }
+      &__label{
+          margin-right: .25rem;
+      
+          &--image{
+              height: 80%;
+          }
+      }
+      
+}

@@ -8,10 +8,13 @@ import Edit from '../../assets/icons/edit-24px.svg';
 import { useState, useEffect } from "react";
 import axios from "axios";
 import API_URL from "../../utils";
+import labelImg from '../../assets/icons/sort-24px.svg';
+import InventoryItem from "../../components/InventoryItem/InventoryItem";
 
 const InventoryList = ({ inventories, setInventories}) => {
     const {id} = useParams()
     const [inventoryData, setInventoryData] = useState(null);
+    
 
     useEffect(() => {
         async function getInventories(){
@@ -32,52 +35,44 @@ const InventoryList = ({ inventories, setInventories}) => {
     }
     return (
     <>
-    <div className="inventoryheader">
-            <div className="inventoryheader">
-                <div className="iventoryheader-title">
-                    <h4 className='inven'>Inventory</h4>
+    <div className="inventorylist">
+            <div className="inventorylist__header">
+                    <h1 className="iventorylist__header-title">Inventory</h1>
                     <Link to ={`/inventories-info/${inventories.id}`} >
-                    <div className='inventoryheader__name'>{inventories.item_name}
+                    <div className='inventorylist__header-name'>{inventories.item_name}
                     </div>
                     </Link>
-                 </div>
             </div>
-                 <div className=''>
-                <div className='warehouseinfo__header'>
-                    <div className='warehouseinfo__header-left'>
-                        <Link to={'/'} className='warehouseinfo__header-left-link'>
-                        <img className='warehouseinfo__header-left-link-back' src={Back}/>
-                        </Link>
-                    <h1 className='warehouseinfo__header-left-name'>{foundWarehouse.warehouse_name}</h1>
-                    </div>
-                    <img className='warehouseinfo__header-edit' src={Edit}/>
+            <div className='inventorylist__tablet-labels'>
+                <div className='inventorylist__label-container'>
+                    <h3 className='inventorylist__label'>INVENTORY ITEM</h3>
+                        <img className='inventorylist__label--image' src={labelImg}/>
                 </div>
-                <div className='warehouseinfo__main'>
-                <div className='warehouseinfo__main-section'>
-                <h4 className='warehouseinfo__main-section-staticaddress'>WAREHOUSE ADDRESS:</h4>
-                    <div className='warehouseinfo__main-section-address'>{foundWarehouse.address + ' ' + foundWarehouse.city + ' ' + foundWarehouse.country}</div>
+                <div className='inventorylist__label-container'>
+                    <h3 className='inventorylist__label'>CATEGORY</h3>
+                        <img className='inventorylist__label--image' src={labelImg}/>
                 </div>
-                <div className='warehouseinfo__main-contact'>
+                <div className='inventorylist__label-container'>
+                    <h3 className='inventorylist__label'>STATUS</h3>
+                        <img className='inventorylist__label--image' src={labelImg}/>
+                </div>
+                <div className='inventorylist__label-container'>
+                    <h3 className='inventorylist__label'>QTY</h3>
+                        <img className='inventorylist__label--image' src={labelImg}/>
+                </div>
+                <div className='inventorylist__label-container'>
+                    <h3 className='inventorylist__label'>WAREHOUSE</h3>
+                        <img className='inventorylist__label--image' src={labelImg}/>
+                </div>
                 
-                        <div className='warehouseinfo__main-contact-left'>
-                        <h4 className='warehouseinfo__main-contact-left-staticname'>CONTACT NAME:</h4>
-                        <div className='warehouseinfo__main-contact-left-name'>{foundWarehouse.contact_name}</div>
-                        <div className='warehouseinfo__main-contact-left-position'>{foundWarehouse.contact_position}</div>
-                        </div>
-                        <div className='warehouseinfo__main-contact-right'>
-                        <h4 className='warehouseinfo__main-contact-right-staticinfo'>CONTACT INFORMATION:</h4>
-                        <div className='warehouseinfo__main-contact-right-phone'>{foundWarehouse.contact_phone}</div>
-                        <div className='warehouseinfo__main-contact-right-email'>{foundWarehouse.contact_email}</div>
-                        </div>
-                    </div>
+                <div className='inventorylist__label-container inventorylist__label-container--noImg'>
+                    <h3 className='inventorylist__label'>ACTIONS</h3>
+                </div>
             </div>
-            <div>
-            {warehouseItems.map((warehouseItem) => (
-                            <ActualWarehouseItem key={warehouseItem.id}  warehouseDetails={warehouseItem}/>
+            {inventoryData?.map((warehouseItem) => (
+                            <InventoryItem key={warehouseItem.id}  warehouseDetails={warehouseItem} itemId={warehouseItem.id}/>
                         ))}
             </div>
-            </div>
-        </div>
     </>
     );
 }
