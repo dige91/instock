@@ -8,7 +8,6 @@
       background-color: $light-grey;
       width: 100vw;
       height: 100vh;
-      padding-top: 5rem;
       top: 0;
        right: 0;
        left: 0;
@@ -30,23 +29,22 @@
        }
       }
        &-content{
-       width: 80vw;
-       height: 60vh;
-       position: relative;
+       width: 100vw;
+       height: 100vh;
        background-color: #ffffff;
-       left: 3rem;
        display: flex;
        flex-direction: column;
        justify-content: space-between;
        padding: 1rem;
        @include tablet{
-          height: 25vh;
+          height: 35vh;
        }
        @include desktop{
           width: 55vw;
           
        }
        &-top{
+
           @include tablet{
              position: relative;
              left: 3rem;
@@ -54,10 +52,10 @@
           &-close{
              width: 4vw;
              position: relative;
-             left: 15rem;
+             left: 20rem;
              @include tablet{
                 width: 3vw;
-                left: 32rem;
+                left: 54rem;
             
              }
              @include desktop{
@@ -66,21 +64,16 @@
              }
           }
           &-header{
-             font-size: 1.5rem;
-             padding-bottom: .5rem;
-             @include desktop{
-                font-size: 2rem;
-             }
+             @include page-header-font;
+             @include page-header-padding;
+             
           }
           &-confirm{
-             font-size: .7rem;
-             line-height: 1.3rem;
+             @include body-medium-font;
              color: $instock-black;
              @include tablet{
                 width: 68%;
                 @include desktop{
-                   font-size: 1rem;
-                   line-height: 1.5rem;
                    padding-top: 1rem;
                 }
              }
@@ -96,12 +89,14 @@
              justify-content: flex-end;
           }
           &-cancel{
+               border: none;
              height: 2.25rem;
              padding: 0rem 1rem;
              border-radius: 1.125rem;
              width: 35vw;
              background-color: $white;
-             border-color: $cloud;
+             border: 1px solid $cloud;
+             margin-right: 1rem;
              @include tablet{
                 width: 10vw;
              }

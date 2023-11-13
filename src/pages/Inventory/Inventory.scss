@@ -134,38 +134,39 @@
                 }
             }
         }
+        &__tablet-labels{
+            padding: 1rem 1.5rem;
+            background-color: $light-grey;
+            color: $slate;
+            display: none;
+          
+            @include tablet{
+              display: flex;
+            }
+          }
+          &__label-container{
+              display: flex;
+              width: 22%;
+          
+              &--noImg{
+                  width: 10%;
+              }
+          }
+          &__label{
+              margin-right: .25rem;
+          
+              &--image{
+                  height: 80%;
+            }
+        }
     }
     
     button {
-        font-family: 'Titillium Web';
+        font-family: 'Titillium';
     
         &:hover {
             cursor: pointer;
         }
-    &__tablet-labels{
-        padding: 1rem 1.5rem;
-        background-color: $light-grey;
-        color: $slate;
-        display: none;
-      
-        @include tablet{
-          display: flex;
-        }
-      }
-      &__label-container{
-          display: flex;
-          width: 22%;
-      
-          &--noImg{
-              width: 10%;
-          }
-      }
-      &__label{
-          margin-right: .25rem;
-      
-          &--image{
-              height: 80%;
-        }
-    }
+    
       
 }
