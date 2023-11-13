@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
 import PageHeaderNoIcon from '../PageHeaderNoIcon/PageHeaderNoIcon'
-const REACT_APP_BACKEND_URL = "http://localhost:8080/warehouse";
+const REACT_APP_BACKEND_URL = "http://localhost:8080/api/warehouses";
 
 function EditWarehouse() {
 
@@ -65,15 +65,14 @@ function EditWarehouse() {
             }
         }
     };
-
-
+    console.log(warehouse);
     return (
         <section className='form-container'>
         <PageHeaderNoIcon text='Edit Warehouse'/>
         <form className='form' ref={formRef} onSubmit={handleSubmit}>
             <div className='form__input-container'>
-                <WarehouseDetails />
-                <ContactDetails />
+                <WarehouseDetails warehouse={warehouse}/>
+                <ContactDetails warehouse={warehouse}/>
             </div>
 
             <div className='form__button-container'>
