@@ -77,7 +77,7 @@ function EditWarehouse() {
             </div>
 
             <div className='form__button-container'>
-                <Link to='/'><ButtonAlternate text='cancel' /></Link>
+                <Link className='form__link' to='/'><ButtonAlternate text='cancel' /></Link>
                 <Button type='submit' text='Save' />
             </div>
         </form>

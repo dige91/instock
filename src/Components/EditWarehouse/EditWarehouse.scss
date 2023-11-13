@@ -3,6 +3,8 @@
 
 .form-container{
     @include section-padding;
+    position: relative;
+    top: -100px;
 }
 .form{
     display: flex;
@@ -40,7 +42,7 @@
         .button-alt{
             width: 100%;
             @include tablet {
-                width: fit-content;
+                width: unset;
                 margin-right: 1rem;
             }
         }

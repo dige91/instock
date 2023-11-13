@@ -46,7 +46,7 @@ function ActualWarehouseItem ({warehouseDetails, itemId}){
                 <div className='warehouse-item__stat-block warehouse-item__stat-block--icons'>
                     <div className='warehouse-item__icon-block'>
                         <DeleteInventory itemDetails={warehouseDetails} id={itemId}/>
-                        <img className='warehouse-item__edit-icon' src={edit}/>
+                        <Link to={`/edit-inventory-item/${itemId}`} ><img className='warehouse-item__edit-icon' src={edit}/></Link>
                     </div>
                 </div>
             </div>
