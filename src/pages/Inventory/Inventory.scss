@@ -1,0 +1,172 @@
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/typography' as *;
+
+
+
+.inventorylist{
+        position: relative;
+        width: stretch;
+        margin: 0 1.0625rem;
+        border-radius: .25rem;
+        background: white;
+        top: -100px;
+        box-shadow: 0 .125rem .3125rem rgba(19, 24, 44, 0.1);
+    
+        @include tablet {
+            margin: 0 4% 6.25rem 4%;
+        }
+    
+        @include desktop {
+            margin: 0 10% 9.375rem 10%;
+        }
+    
+        &__divider {
+            border-top: .0625rem solid $cloud;
+    
+            @include tablet {
+                display: none;
+            }
+        }
+    
+        &__header {
+            display: flex;
+            flex-wrap: wrap;
+            padding: .9375rem 7%;
+            margin: 0;
+    
+            @include tablet {
+                align-items: center;
+                justify-content: space-between;
+                padding: .9375rem 4%;
+                margin: 0;
+            }
+    
+            &-title {
+                font-weight: 600;
+                color: $instock-black;
+                margin: .75rem 0;
+    
+                @include tablet {
+                    margin: .625rem 0 0 0;
+                }
+            }
+    
+            &-container {
+                width: 100%;
+    
+                @include tablet {
+                    width: 57%;
+                }
+    
+                @include desktop {
+                    width: 48%;
+                }
+            }
+    
+            &-form {
+                padding-bottom: .3125rem;
+    
+                @include tablet {
+                    display: flex;
+                    height: 2.375rem;
+                    margin-top: .625rem;
+                }
+    
+                &-search {
+                    background-image: url('../../assets/icons/search-24px.svg');
+                    background-repeat: no-repeat;
+                    background-position: 94%;
+                    border-radius: 1.25rem;
+                    border: .0625rem solid $cloud;
+                    padding: .4375rem 1rem;
+                    width: stretch;
+                    margin-bottom: .9375rem;
+    
+                    &:focus {
+                        outline: none;
+                        border: .0625rem solid $instock-indigo;
+                    }
+    
+                    @include tablet {
+                        margin: 0 .9375rem 0 0;
+                    }
+                }
+    
+                &-button {
+                    background-color: $instock-indigo;
+                    color: white;
+                    width: stretch;
+                    border-radius: 1.25rem;
+                    border: none;
+                    padding: 0 1rem;
+                    margin-bottom: .3125rem;
+                    height: 2.25rem;
+    
+                    @include tablet {
+                        height: 2.375rem;
+                        width: 10.3125rem;
+                    }
+    
+                    &:hover {
+                        background-color: $instock-black;
+                    }
+                }
+            }
+        }
+    
+        &__tablet {
+            &-labels{
+                display: none;  
+
+                @include tablet {
+                    padding: .5rem 1.5rem 0.7rem 1.5rem;
+                    display: flex;
+                    align-items: baseline;
+                    justify-content: space-between;
+                    background-color: $light-grey;
+            }
+    
+                &-header{
+                    font-size: .65rem;
+                    color: $slate;
+                    
+                }
+            }
+        }
+        &__tablet-labels{
+            padding: 1rem 1.5rem;
+            background-color: $light-grey;
+            color: $slate;
+            display: none;
+          
+            @include tablet{
+              display: flex;
+            }
+          }
+          &__label-container{
+              display: flex;
+              width: 22%;
+          
+              &--noImg{
+                  width: 10%;
+              }
+          }
+          &__label{
+              margin-right: .25rem;
+          
+              &--image{
+                  height: 80%;
+            }
+        }
+    }
+    
+    button {
+        font-family: 'Titillium';
+    
+        &:hover {
+            cursor: pointer;
+        }
+    
+      
+}

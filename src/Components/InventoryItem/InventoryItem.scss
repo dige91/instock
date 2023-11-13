@@ -1,11 +1,15 @@
 @use '../../styles/partials/mixin' as *;
 @use '../../styles/partials/colors' as *;
 
-.warehouse-item{
+.inventory-item{
     display: flex;
     flex-wrap: wrap;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem ;
     @include divider;
+
+    @include tablet {
+        flex-wrap: nowrap;
+    }
 
     &__text{
         color: $instock-black;
@@ -24,7 +28,7 @@
         } 
     }
     &:first-child{
-        .warehouse-item__label{
+        .inventory-item__label{
             display: unset;
         }
     }
@@ -41,7 +45,12 @@
 
         &--margin{
             margin-left: 50%;
+
+            @include tablet {
+                margin-left: 0;
+            }
         }
+
         @include tablet {
             width: 22%;
         }
