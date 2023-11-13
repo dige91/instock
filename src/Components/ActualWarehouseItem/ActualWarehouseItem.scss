@@ -1,6 +1,10 @@
 @use '../../styles/partials/mixin' as *;
 @use '../../styles/partials/colors' as *;
 
+.empty{
+    text-align: center;
+    @include label-padding;
+}
 .warehouse-item{
     display: flex;
     flex-wrap: wrap;

@@ -36,7 +36,7 @@ function AddInventory({warehouses}) {
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        if (!item_name || !description || !category || !status || (typeof(quantity) !== 'number') || !warehouse) {
+        if (!item_name || !description || !category || !status || (typeof(quantity) !== 'number') ) {
             alert("You must fill out all fields");
             const inputedItem = {
                 item_name,
@@ -60,7 +60,7 @@ function AddInventory({warehouses}) {
             setNewItem(inputedItem)
 
             alert('success')
-            // window.location.href = '/'
+            window.location.href = '/'
         }
     }
 
@@ -90,7 +90,7 @@ function AddInventory({warehouses}) {
 
             <div className='main-section-form__button-container'>
                 <Link to='/' className='main-section-form__link'><ButtonAlternate text='cancel' /></Link>
-                <Button type='submit' text='+ Add a Warehouse' />
+                <Button type='submit' text='+ Add Item' />
             </div>
         </form>
         </section>

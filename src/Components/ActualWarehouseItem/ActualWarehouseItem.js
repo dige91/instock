@@ -13,6 +13,11 @@ function ActualWarehouseItem ({warehouseDetails, itemId}){
             'Loading......'
         )
     }
+    if (warehouseDetails.message){
+        return(
+            <h2 className='empty'>This is an empty warehouse</h2>
+        )
+    }
 
     console.log(warehouseDetails)
     return(
