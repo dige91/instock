@@ -18,6 +18,7 @@ function App() {
 
   const REACT_APP_BACKEND_URL = "http://localhost:8080/warehouse";
   const [warehouses, setWarehouses] = useState(null);
+  const [inventories, setInventories] = useState(null);
 
     useEffect(() => {
         async function getWarehouses(){
@@ -27,6 +28,14 @@ function App() {
         getWarehouses();
     },[])
 
+    useEffect(() => {
+      async function getInventories(){
+          const response = await axios.get('http://localhost:8080/api/inventories');
+          setInventories(response.data);
+      }
+      getInventories();
+  },[])
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -34,7 +43,7 @@ function App() {
         <Routes>
           <Route path= 'add-an-item' element={<AddInventory warehouses={warehouses} setWarehouses={setWarehouses}/>} />
           <Route path='/' element={<Warehouse warehouses={warehouses} setWarehouses={setWarehouses}/>} />
-          <Route path='/inventory' element={<Inventory/>} />
+          <Route path='/inventory' element={<Inventory inventories={inventories}/>} />
           <Route path='/inventory/:id' element={<InventoryDetails warehouses={warehouses}/>} />
           <Route path='/add-a-warehouse' element={<AddWarehouse />} />
           <Route path='/edit-warehouse/:id' element={<EditWarehouse />} />

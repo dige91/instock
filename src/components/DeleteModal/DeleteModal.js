@@ -65,6 +65,7 @@ const DeleteModal = ({classNm, setWarehouses, id}) => {
         </div>
         </div>
         )}
+        
 
        </div>
       );
