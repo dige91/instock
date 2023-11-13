@@ -17,7 +17,7 @@ function AddWarehouse() {
 
     useEffect(() => {
         async function postWarehouse() {
-            const response = await axios.post(API_URL + '/api/warehouse', newWarehouse);
+            const response = await axios.post(API_URL + '/api/warehouses', newWarehouse);
         }
         if (newWarehouse) {
             postWarehouse();

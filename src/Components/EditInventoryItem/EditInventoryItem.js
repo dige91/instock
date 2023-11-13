@@ -70,7 +70,7 @@ function EditInventoryItem({ warehouses }) {
             await axios.put(`${API_URL}/api/inventories/${id}`, updatedItem);
             alert('Success');
             console.log(updatedItem);
-            // window.location.href = '/';
+            window.location.href = '/';
         } catch (error) {
             console.error('Error updating inventory item:', error);
             console.log("error response:", error.response);

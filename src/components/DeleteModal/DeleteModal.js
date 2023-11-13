@@ -18,7 +18,7 @@ const DeleteModal = ({classNm, setWarehouses, id}) => {
     
         const deleteWarehouse = async () => {
             try {
-                const response = await axios.delete(`${API_URL}/warehouse/${id}`);
+                const response = await axios.delete(`${API_URL}/api/warehouses/${id}`);
                 // const updatedWarehouses = Warehouse.filter((warehouse) => warehouse.id !== id);
                 setWarehouses([]);
 

@@ -13,7 +13,7 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
     const handleChangeWarehouse = (event) => {
         setWarehouseName(event.target.value);
     };
-
+    console.log('LOOK HERE:',warehouseName);
     if (warehouses) {
         return (
             <section className='item-availability'>
@@ -74,7 +74,7 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
                     >
                     
 
-                        {warehouses?.map((warehouse) => (
+                        {warehouses.map((warehouse) => (
                             <option key={warehouse.id} value={warehouse.id}>
                                 {warehouse.warehouse_name}
                             </option>

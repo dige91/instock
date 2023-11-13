@@ -1,6 +1,6 @@
 import './ItemAvailability.scss'
 
-function ItemAvailability({ status, setStatus, warehouses, quantity, setQuantity, category, setWarehouse }) {
+function ItemAvailability({ status, setStatus, warehouses, quantity, setQuantity, category, setWarehouse, warehouse }) {
 
 
     const handleChangeStatus = (event) => {
@@ -56,7 +56,7 @@ function ItemAvailability({ status, setStatus, warehouses, quantity, setQuantity
 
 
                 <label className='item-availability__label' htmlFor='warehouse'>Warehouse</label>
-                <select className='item-availability__input item-availability__input--select' name="warehouse" defaultValue='electronics' onChange={handleChangeWarehouse}>
+                <select className='item-availability__input item-availability__input--select' name="warehouse" onChange={handleChangeWarehouse}>
                     {
                         warehouses?.map((warehouse) => {
                             return (

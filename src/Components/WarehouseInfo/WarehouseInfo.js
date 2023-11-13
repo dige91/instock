@@ -78,7 +78,11 @@ const WarehouseInfo = ({ warehouses }) => {
                         <h3 className='warehouseinfo__label'>ACTIONS</h3>
                     </div>
                 </div>
-                {warehouseItems.map((warehouseItem) => (
+                {
+                
+                
+                warehouseItems.map((warehouseItem) => (
+
                     <ActualWarehouseItem key={warehouseItem.id} warehouseDetails={warehouseItem} itemId={warehouseItem.id} />
                 ))}
             </div>
