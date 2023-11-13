@@ -38,6 +38,8 @@
        padding: 1rem;
        @include tablet{
           height: 35vh;
+          width: 95%;
+
        }
        @include desktop{
           width: 55vw;
