@@ -3,7 +3,7 @@ import Delete from '../../assets/icons/delete_outline-24px.svg'
 import Close from '../../assets/icons/close-24px.svg';
 import { useState } from "react";
 import axios from "axios";
-import '../DeleteInventory/DeleteInventory.scss'
+import './DeleteInventory.scss'
 
 const DeleteInventory = ({classNm, setInventory, id , itemDetails}) => {
     const handleDelete = (event) =>{

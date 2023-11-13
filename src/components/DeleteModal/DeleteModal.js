@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../DeleteModal/DeleteModal.scss';
+import './DeleteModal.scss';
 import Delete from '../../assets/icons/delete_outline-24px.svg';
 import Close from '../../assets/icons/close-24px.svg';
 import Warehouse from "../../pages/Warehouse/Warehouse";

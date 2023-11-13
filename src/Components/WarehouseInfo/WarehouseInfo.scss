@@ -2,7 +2,7 @@
 @use '../../styles/partials/colors' as *;
 @use '../../styles/partials/typography' as *;
 
-.warehouseinfo{
+.warehouseinfo {
 
     border-bottom: 1px solid $light-grey;
     position: relative;
@@ -22,100 +22,119 @@
         margin: 0 10% 9.375rem 10%;
     }
 
-    &__header{
+    &__header {
         display: flex;
         justify-content: space-between;
         border-bottom: 1px solid $cloud;
         padding: 2rem 1rem;
-        &-left{
+
+        &-left {
             display: flex;
 
-            &-link{
+            &-link {
                 display: flex;
             }
-
-            &-name{
-               
-            }
-
         }
     }
-    &__main{
-        display: flex;
-        flex-direction: column;
+
+    &-top {
         @include divider;
-            @include tablet{
+        padding-bottom: 1rem;
+
+        &__main {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem 6rem 1rem 2rem;
+
+            @include tablet {
                 flex-direction: row;
                 align-items: center;
-                justify-content: space-around;
-                border: none;
-            }
-        &-section{
-            padding: 2rem 1rem;
-            @include tablet{
-                width: 21vw;
-               
-            }
-            @include desktop{
-                width: 12vw;
-            }
-            &-staticaddress{
-                color: $slate;
-                @include tablet{
-                    border-right: 1px solid $cloud;
-                }
-            }
-            &-address{
-                @include tablet{
-                    border-right: 1px solid $cloud
-                }
-            }
-        }
-        &-contact{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            @include tablet{
                 justify-content: space-between;
-                width: 50%;
+                border: none;
+                padding: 1rem 2rem;
             }
-            &-left{
+
+            &-section {
+                padding-bottom: 1rem;
+                @include tablet {
+                    width: 21vw;
+                    padding-bottom: 0;
+                }
+
+                @include desktop {
+                    width: 12vw;
+                }
+
+                &-staticaddress {
+                    color: $slate;
+
+                    @include tablet {
+                        padding-right: 2rem;
+                    }
+                }
+
+                &-address {
+                    @include tablet {
+                        padding-right: 2rem;
+
+                    }
+                }
+            }
+
+            &-contact {
                 display: flex;
-                flex-direction: column;
-                &-staticname{
-                    color: $slate;
+                justify-content: space-between;
+
+                @include tablet {
+                    justify-content: space-between;
+                    border-left: 1px solid $cloud;
+                    width: 50%;
+                    padding-left: 1.5rem;
+                }
+
+                &-left {
+                    display: flex;
+                    flex-direction: column;
+
+                    &-staticname {
+                        color: $slate;
+                    }
+                }
+
+                &-right {
+                    &-staticinfo {
+                        color: $slate;
+                    }
                 }
             }
-            &-right{
-                &-staticinfo{
-                    color: $slate;
-                }
+        }
+    }
+
+        &__tablet-labels {
+            padding: 1rem 1.5rem;
+            background-color: $light-grey;
+            color: $slate;
+            display: none;
+
+            @include tablet {
+                display: flex;
+            }
+        }
+
+        &__label-container {
+            display: flex;
+            width: 22%;
+
+            &--noImg {
+                width: 10%;
+            }
+        }
+
+        &__label {
+            margin-right: .25rem;
+
+            &--image {
+                height: 80%;
             }
         }
     }
-    &__tablet-labels{
-      padding: 1rem 1.5rem;
-      background-color: $light-grey;
-      color: $slate;
-      display: none;
-
-      @include tablet{
-        display: flex;
-      }
-    }
-    &__label-container{
-        display: flex;
-        width: 22%;
-
-        &--noImg{
-            width: 10%;
-        }
-    }
-    &__label{
-        margin-right: .25rem;
-
-        &--image{
-            height: 80%;
-        }
-    }
-}
