@@ -1,5 +1,5 @@
 import ContactDetails from '../ContactDetails/ContactDetail'
-import WarehouseDetails from '../WarehouseDetails/WarehouseDetails'
+import EditWarehouseDetails from '../EditWarehouseDetails/EditWarehouseDetails'
 import ButtonAlternate from '../ButtonAlternate/ButtonAlternate'
 import Button from '../Button/Button'
 import './EditWarehouse.scss'
@@ -8,7 +8,8 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
 import PageHeaderNoIcon from '../PageHeaderNoIcon/PageHeaderNoIcon'
-const REACT_APP_BACKEND_URL = "http://localhost:8080/warehouse";
+import EditContactDetails from '../EditContactDetails/EditContactDetails'
+const REACT_APP_BACKEND_URL = "http://localhost:8080/api/warehouses";
 
 function EditWarehouse() {
 
@@ -65,15 +66,14 @@ function EditWarehouse() {
             }
         }
     };
-
-
+    console.log(warehouse);
     return (
         <section className='form-container'>
         <PageHeaderNoIcon text='Edit Warehouse'/>
         <form className='form' ref={formRef} onSubmit={handleSubmit}>
             <div className='form__input-container'>
-                <WarehouseDetails />
-                <ContactDetails />
+                <EditWarehouseDetails warehouse={warehouse}/>
+                <EditContactDetails warehouse={warehouse}/>
             </div>
 
             <div className='form__button-container'>

@@ -16,7 +16,7 @@ import InventoryDetails from './components/InventoryDetails/InventoryDetails';
 
 function App() {
 
-  const REACT_APP_BACKEND_URL = "http://localhost:8080/warehouse";
+  const REACT_APP_BACKEND_URL = "http://localhost:8080/api/warehouses";
   const [warehouses, setWarehouses] = useState(null);
   const [inventories, setInventories] = useState(null);
 
@@ -41,7 +41,7 @@ function App() {
       <BrowserRouter>
       <Header />
         <Routes>
-          <Route path= 'add-an-item' element={<AddInventory warehouses={warehouses} setWarehouses={setWarehouses}/>} />
+          <Route path= '/add-an-item' element={<AddInventory warehouses={warehouses} setWarehouses={setWarehouses}/>} />
           <Route path='/' element={<Warehouse warehouses={warehouses} setWarehouses={setWarehouses}/>} />
           <Route path='/inventory' element={<Inventory inventories={inventories}/>} />
           <Route path='/inventory/:id' element={<InventoryDetails warehouses={warehouses}/>} />

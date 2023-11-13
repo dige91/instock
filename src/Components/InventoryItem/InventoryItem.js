@@ -2,7 +2,7 @@ import Warehouse from '../../pages/Warehouse/Warehouse'
 import DeleteInventory from '../DeleteInventory/DeleteInventory'
 import edit from '../../assets/icons/edit-24px.svg'
 import forward from '../../assets/icons/chevron_right-24px.svg'
-import '../InventoryItem/InventoryItem.scss'
+import './InventoryItem.scss'
 import WarehouseDetails from '../WarehouseDetails/WarehouseDetails'
 import { Link } from 'react-router-dom'
 
