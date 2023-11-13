@@ -36,12 +36,22 @@ const InventoryList = ({ inventories, setInventories}) => {
     return (
     <>
     <div className="inventorylist">
+        
             <div className="inventorylist__header">
-                    <h1 className="iventorylist__header-title">Inventory</h1>
+                    <h1 className="inventorylist__header-title">Inventory</h1>
                     <Link to ={`/inventories-info/${inventories.id}`} >
                     <div className='inventorylist__header-name'>{inventories.item_name}
                     </div>
                     </Link>
+                    <div className="inventorylist__header-container">
+                        <form className="inventorylist__header-form">
+                            <input type="search" name="search" className="inventorylist__header-form-search" placeholder="Search..." />
+                            <Link to="/add-an-item">
+    
+                                <button className="inventorylist__header-form-button">+ Add New Item</button>
+                            </Link>
+                        </form>
+                    </div>
             </div>
             <div className='inventorylist__tablet-labels'>
                 <div className='inventorylist__label-container'>
