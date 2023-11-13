@@ -3,9 +3,18 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/typography' as *;
 
+* {
+    color: $instock-black;
+}
+
 h4 {
-    padding-top: 0.5rem;
+    padding-top: 1rem;
     padding-bottom: 0.5rem;
+    color: $slate;
+    @include tablet{
+        padding-top: 1rem;
+
+    }
 }
 
 .inventories {
@@ -95,6 +104,27 @@ h4 {
             display: flex;
             justify-content: space-evenly;
         }
+
+
+        &__stock {
+            border-radius: 20px;
+            width: fit-content;
+            @include buttonLabel-font;
+            padding: 4px 8px;
+
+            &--instock {
+                color: $green;
+                text-align: center;
+                background-color: rgba($color: $green, $alpha: 0.07);
+            }
+
+            &--outOfStock {
+                text-align: center;
+                color: $red;
+                background-color: rgba($color: $red, $alpha: 0.07);
+            }
+
+        }
     }
 }
 
@@ -127,16 +157,21 @@ h4 {
 
 .inventories-sections__left {
     @include tablet {
-        padding-right: 5rem;
+        border-right: solid 1px $cloud;
+        padding-right: 4rem;
         width: 50%;
     }
 
     @include desktop {
-        padding-right: 5rem;
+        padding-right: 4rem;
         width: 50%;
     }
 }
-
+.inventories-sections__right {
+    @include tablet{
+        padding-left: 2rem;
+    }
+}
 .inventories-sections__right-top {
     display: flex;
 }
