@@ -34,24 +34,24 @@ const WarehouseInfo = ({ warehouses }) => {
     const foundWarehouse = warehouses.find((warehouse) => String(warehouse.id) === id)
     return (
         <section className='warehouseinfo'>
-            <div className=''>
+            <div className='warehouseinfo-top'>
                 <PageHeader text={foundWarehouse.warehouse_name} path={'warehouse'} ID={id} />
-                <div className='warehouseinfo__main'>
-                    <div className='warehouseinfo__main-section'>
-                        <h4 className='warehouseinfo__main-section-staticaddress'>WAREHOUSE ADDRESS:</h4>
-                        <div className='warehouseinfo__main-section-address'>{foundWarehouse.address + ' ' + foundWarehouse.city + ' ' + foundWarehouse.country}</div>
+                <div className='warehouseinfo-top__main'>
+                    <div className='warehouseinfo-top__main-section'>
+                        <h4 className='warehouseinfo-top__main-section-staticaddress'>WAREHOUSE ADDRESS:</h4>
+                        <div className='warehouseinfo-top__main-section-address'>{foundWarehouse.address + ' ' + foundWarehouse.city + ' ' + foundWarehouse.country}</div>
                     </div>
-                    <div className='warehouseinfo__main-contact'>
+                    <div className='warehouseinfo-top__main-contact'>
 
-                        <div className='warehouseinfo__main-contact-left'>
-                            <h4 className='warehouseinfo__main-contact-left-staticname'>CONTACT NAME:</h4>
-                            <div className='warehouseinfo__main-contact-left-name'>{foundWarehouse.contact_name}</div>
-                            <div className='warehouseinfo__main-contact-left-position'>{foundWarehouse.contact_position}</div>
+                        <div className='warehouseinfo-top__main-contact-left'>
+                            <h4 className='warehouseinfo-top__main-contact-left-staticname'>CONTACT NAME:</h4>
+                            <div className='warehouseinfo-top__main-contact-left-name'>{foundWarehouse.contact_name}</div>
+                            <div className='warehouseinfo-top__main-contact-left-position'>{foundWarehouse.contact_position}</div>
                         </div>
-                        <div className='warehouseinfo__main-contact-right'>
-                            <h4 className='warehouseinfo__main-contact-right-staticinfo'>CONTACT INFORMATION:</h4>
-                            <div className='warehouseinfo__main-contact-right-phone'>{foundWarehouse.contact_phone}</div>
-                            <div className='warehouseinfo__main-contact-right-email'>{foundWarehouse.contact_email}</div>
+                        <div className='warehouseinfo-top__main-contact-right'>
+                            <h4 className='warehouseinfo-top__main-contact-right-staticinfo'>CONTACT INFORMATION:</h4>
+                            <div className='warehouseinfo-top__main-contact-right-phone'>{foundWarehouse.contact_phone}</div>
+                            <div className='warehouseinfo-top__main-contact-right-email'>{foundWarehouse.contact_email}</div>
                         </div>
                     </div>
                 </div>
