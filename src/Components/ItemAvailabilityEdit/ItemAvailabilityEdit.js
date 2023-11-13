@@ -30,7 +30,7 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
                                 id="In Stock"
                                 name="status"
                                 value="In Stock"
-                                checked={status === 'In Stock'}
+                                checked={quantity !== 0}
                                 onChange={handleChangeStatus}
                             />
                             <label className='item-availability__label' htmlFor="In Stock">In Stock</label>
@@ -42,7 +42,7 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
                                 id="outOfStock"
                                 name="status"
                                 value="outOfStock"
-                                checked={status === 'outOfStock'}
+                                checked={quantity == 0}
                                 onChange={handleChangeStatus}
                             />
                             <label className='item-availability__label' htmlFor="outOfStock">Out of Stock</label>

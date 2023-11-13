@@ -29,7 +29,7 @@
         .button{
             width:48%;
             @include tablet {
-                width: fit-content;
+                width: unset;
                 
             }
         }
@@ -42,6 +42,11 @@
         }
         .form__link{
             width:48%;
+
+            @include tablet {
+                width: unset;
+                
+            }
         }
         
         

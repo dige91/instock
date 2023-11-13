@@ -34,9 +34,9 @@ function InventoryDetails() {
     console.log(inventoryData.warehouse_id);
 
     return (
-        <div className="inventories">
-            <div>
-                <PageHeader text={inventoryData.item_name} srcLeft={backIcon} srcRight={edit} btnImg={edit} btnTxt="Edit"/>
+        
+            <div className="inventories">
+                <PageHeader text={inventoryData.item_name} path='inventory' ID={id}/>
                 {/* //MOBILE */}
                 <div className="inventories-sections__mobile">
                     <div className="inventories-sections__left">
@@ -97,7 +97,7 @@ function InventoryDetails() {
                     </div>
                 </div>
             </div>
-        </div>
+        
     );
 }
 

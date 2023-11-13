@@ -8,6 +8,7 @@ import API_URL from '../../utils';
 import axios from 'axios';
 import WarehouseItem from '../WarehouseItem/WarehouseItem';
 import ActualWarehouseItem from '../ActualWarehouseItem/ActualWarehouseItem';
+import PageHeader from '../PageHeader/PageHeader';
 
 
 
@@ -39,15 +40,7 @@ const WarehouseInfo = ({ warehouses ,setWarehouses }) => {
     return ( 
         <section className='warehouseinfo'>
             <div className=''>
-                <div className='warehouseinfo__header'>
-                    <div className='warehouseinfo__header-left'>
-                        <Link to={'/'} className='warehouseinfo__header-left-link'>
-                        <img className='warehouseinfo__header-left-link-back' src={Back}/>
-                        </Link>
-                    <h1 className='warehouseinfo__header-left-name'>{foundWarehouse.warehouse_name}</h1>
-                    </div>
-                    <img className='warehouseinfo__header-edit' src={Edit}/>
-                </div>
+                <PageHeader text={foundWarehouse.warehouse_name} path={'warehouse'} ID={id}/>
                 <div className='warehouseinfo__main'>
                 <div className='warehouseinfo__main-section'>
                 <h4 className='warehouseinfo__main-section-staticaddress'>WAREHOUSE ADDRESS:</h4>

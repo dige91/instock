@@ -9,7 +9,6 @@ function PageHeaderNoIcon({ text, }) {
         navigate(-1)
     }
 
-
     return (
         <div className='page-header'>
             <img className='page-header__img1' onClick={goBack} src={backBtn} />

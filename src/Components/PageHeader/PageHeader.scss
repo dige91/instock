@@ -15,7 +15,6 @@
         width:80%;
     }
     &__img1{
-        width: 5%;
         margin-right: 1rem;
     }
     &__img2-container{
@@ -30,7 +29,11 @@
             display: none;
         }
     }
+    &__link{
+        width:100%;
+    }
     &__icon-container{
+        min-width: 80px;
         width: 15%;
         display: flex;
         align-items: center;
