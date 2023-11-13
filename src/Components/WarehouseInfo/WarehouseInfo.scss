@@ -34,9 +34,6 @@
             &-link {
                 display: flex;
             }
-
-            &-name {}
-
         }
     }
 
@@ -47,14 +44,14 @@
         &__main {
             display: flex;
             flex-direction: column;
-            padding: 1rem 4rem 1rem;
+            padding: 1rem 6rem 1rem 2rem;
 
             @include tablet {
                 flex-direction: row;
                 align-items: center;
-                justify-content: space-around;
+                justify-content: space-between;
                 border: none;
-                padding: 1rem;
+                padding: 1rem 2rem;
             }
 
             &-section {
@@ -86,7 +83,6 @@
 
             &-contact {
                 display: flex;
-                flex-direction: row;
                 justify-content: space-between;
 
                 @include tablet {
