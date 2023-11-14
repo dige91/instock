@@ -42,7 +42,7 @@ const WarehouseItem = ({ warehouse ,setWarehouses, id }) => {
             <div className='item__right'>
                 <div className="item__right-name">
                     <h4 className='headings'>CONTACT NAME</h4>
-                    <div>{warehouse.contact_name}</div>
+                    <h3>{warehouse.contact_name}</h3>
                 </div>
                 <div className="item__right-contact">
                     <h4 className='headings'>CONTACT INFORMATION</h4>

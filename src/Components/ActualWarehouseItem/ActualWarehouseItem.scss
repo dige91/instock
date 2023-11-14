@@ -11,6 +11,18 @@
     padding: 1rem 2rem;
     @include divider;
 
+    &:hover{
+        background-color: rgba($color: $instock-indigo, $alpha: 0.07);
+    }
+
+    &__title{
+        color: $instock-indigo;
+
+        &:hover{
+            border-bottom: 1px solid $instock-indigo;
+        }
+    }
+
     &__text{
         color: $instock-black;
     }
@@ -66,7 +78,7 @@
     }
     &__link{
         display: flex;
-        color: $instock-black;
+        color: $instock-indigo;
     }
     &__edit-icon{
         max-width: 24px;

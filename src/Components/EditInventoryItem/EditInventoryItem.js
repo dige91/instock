@@ -17,7 +17,7 @@ function EditInventoryItem({ warehouses }) {
     const [item_name, setItem_name] = useState("");
     const [description, setDescription] = useState("");
     const [category, setCategory] = useState("");
-    const [status, setStatus] = useState("outOfStock");
+    const [status, setStatus] = useState("out Of Stock");
     const [quantity, setQuantity] = useState(0);
     const [warehouseName, setWarehouseName] = useState("");
     const navigate = useNavigate()
@@ -31,7 +31,7 @@ function EditInventoryItem({ warehouses }) {
                 setItem_name(item_name || "");
                 setDescription(description || "");
                 setCategory(category || "");
-                setStatus(status || "outOfStock");
+                setStatus(status || "out Of Stock");
                 setQuantity(quantity || 0);
                 setWarehouseName(warehouse_id || "");
                 console.log('ID :', warehouse_id)

@@ -3,23 +3,17 @@
 @use '../../styles/partials/typography' as *;
 
 
-
+.inventorylist-holder{
+    @include section-padding;
+}
 .inventorylist{
         position: relative;
         width: stretch;
-        margin: 0 1.0625rem;
         border-radius: .25rem;
         background: white;
         top: -100px;
         box-shadow: 0 .125rem .3125rem rgba(19, 24, 44, 0.1);
     
-        @include tablet {
-            margin: 0 4% 6.25rem 4%;
-        }
-    
-        @include desktop {
-            margin: 0 10% 9.375rem 10%;
-        }
     
         &__divider {
             border-top: .0625rem solid $cloud;
@@ -32,24 +26,22 @@
         &__header {
             display: flex;
             flex-wrap: wrap;
-            padding: .9375rem 7%;
-            margin: 0;
+            @include page-header-padding;
+            @include divider;
+            padding: 1rem 1.5rem;
     
             @include tablet {
                 align-items: center;
                 justify-content: space-between;
-                padding: .9375rem 4%;
-                margin: 0;
+                padding: 1rem 1.5rem;
+                border: none;
             }
     
             &-title {
                 font-weight: 600;
                 color: $instock-black;
-                margin: .75rem 0;
+                @include page-header-padding;
     
-                @include tablet {
-                    margin: .625rem 0 0 0;
-                }
             }
     
             &-container {
@@ -147,6 +139,7 @@
           &__label-container{
               display: flex;
               width: 22%;
+              align-items: center;
           
               &--noImg{
                   width: 10%;
