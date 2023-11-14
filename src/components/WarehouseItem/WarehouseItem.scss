@@ -8,7 +8,7 @@
     background-color: $white;
     align-items: baseline;
     justify-content: space-between;
-    padding: 1rem 4rem;
+    @include section-padding;
 
     @include tablet {
         padding: 1rem;
@@ -43,9 +43,10 @@
     }
 
     &__left {
-        width: 40%;
+        width: 49%;
 
         @include tablet {
+            width: 40%;
             display: flex;
             flex-direction: row;
             align-items: baseline;
@@ -72,7 +73,6 @@
                 color: $instock-indigo;
                 display: flex;
                 align-items: center;
-                width: 50%;
                 color: $instock-indigo;
 
                 
