@@ -1,11 +1,19 @@
 @use '../../styles/partials/mixin' as *;
 @use '../../styles/partials/colors' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
 
 .inventory-item{
     display: flex;
     flex-wrap: wrap;
     padding: 1rem 1.5rem ;
     @include divider;
+
+    
+    &:hover{
+        background-color: rgba($instock-indigo, $alpha: .07);
+        cursor: pointer;
+    }
 
     @include tablet {
         flex-wrap: nowrap;
@@ -75,10 +83,17 @@
     }
     &__edit-icon{
         max-width: 24px;
+        display: flex;
     }
 
     &__title-container{
         display: flex;
+    }
+    &__title{
+        color: $instock-indigo;
+        &:hover{
+            border-bottom: 1px solid $instock-indigo;
+        }
     }
 
     &__status{

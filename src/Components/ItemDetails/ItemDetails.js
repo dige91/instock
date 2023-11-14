@@ -27,7 +27,8 @@ function ItemDetails ({setItem_name, setDescription, setCategory}){
                     onChange={handleChangeDescription}
                 />
                 <label className='item-details__label' htmlFor='category' > Category</label>
-                <select className='item-details__input item-availability__input--select' name="category" defaultValue='electronics' onChange={handleChangeCategory}>
+                <select className='item-details__input item-availability__input--select' name="category" onChange={handleChangeCategory}>
+                    <option value='' disabled selected>Please select</option>
                     <option value="electronics">electronics</option>
                     <option value="Accessories">Accessories</option>
                     <option value="Gear">Gear</option>

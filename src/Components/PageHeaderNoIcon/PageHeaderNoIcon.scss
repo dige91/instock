@@ -15,6 +15,7 @@
     }
     &__img1{
         width: 10%;
+        max-width: 24px;
         
 
         @include tablet {

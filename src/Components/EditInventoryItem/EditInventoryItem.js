@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import API_URL from '../../utils';
 import backButton from '../../assets/icons/arrow_back-24px.svg';
@@ -17,9 +17,10 @@ function EditInventoryItem({ warehouses }) {
     const [item_name, setItem_name] = useState("");
     const [description, setDescription] = useState("");
     const [category, setCategory] = useState("");
-    const [status, setStatus] = useState("outOfStock");
+    const [status, setStatus] = useState("out Of Stock");
     const [quantity, setQuantity] = useState(0);
     const [warehouseName, setWarehouseName] = useState("");
+    const navigate = useNavigate()
 
     useEffect(() => {
         const fetchItem = async () => {
@@ -30,7 +31,7 @@ function EditInventoryItem({ warehouses }) {
                 setItem_name(item_name || "");
                 setDescription(description || "");
                 setCategory(category || "");
-                setStatus(status || "outOfStock");
+                setStatus(status || "out Of Stock");
                 setQuantity(quantity || 0);
                 setWarehouseName(warehouse_id || "");
                 console.log('ID :', warehouse_id)
@@ -70,7 +71,11 @@ function EditInventoryItem({ warehouses }) {
             await axios.put(`${API_URL}/api/inventories/${id}`, updatedItem);
             alert('Success');
             console.log(updatedItem);
-            window.location.href = '/';
+            
+            function goBack() {
+                    navigate(-1)
+            };
+            goBack()
         } catch (error) {
             console.error('Error updating inventory item:', error);
             console.log("error response:", error.response);

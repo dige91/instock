@@ -1,4 +1,4 @@
-import Logo from "../../assets/logo/InStock-Logo_1x.png";
+import Logo from "../../assets/logo/InStock-Logo.svg";
 import "./Header.scss";
 import { Link } from "react-router-dom";
 
@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <header className="navigation">
             <div className="navigation-header">
-                <Link to="/">
+                <Link className='navigation-header__logo' to="/">
                     <img src={Logo} alt="instock logo"></img>
                 </Link>
                 <div className="navigation-header__container">
