@@ -45,4 +45,10 @@
         background-color: $instock-indigo;
         color: $white;
     }
+    &__item{
+        &:hover{
+            background-color: $ligth-grey;
+            cursor: pointer;
+        }
+    }
 }

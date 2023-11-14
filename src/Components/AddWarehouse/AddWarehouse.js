@@ -30,6 +30,18 @@ function AddWarehouse() {
     const handleSubmit = (event) => {
         event.preventDefault()
 
+
+        function isValidPhoneNumber(phoneNumber) {
+            const phoneRegex = /^\+?1?\s*\(\d{3}\)\s*\d{3}-\d{4}$/;
+            return phoneRegex.test(phoneNumber);
+        }
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+
+
         const form = formRef.current
         const warehouse_name = form.warehouse_name.value;
         const address = form.address.value;
@@ -43,6 +55,10 @@ function AddWarehouse() {
         if (!warehouse_name || !address || !city || !country || !contact_name || !contact_position || !contact_phone || !contact_email) {
             alert("You must fill out all fields");
             return;
+        }else if (isValidPhoneNumber(contact_phone)){
+            alert('Invalid Phone Number')
+        } else if (isValidEmail(contact_email)){
+            alert('Invalid Email')
         } else {
             const inputedWarehouse = {
                 warehouse_name,

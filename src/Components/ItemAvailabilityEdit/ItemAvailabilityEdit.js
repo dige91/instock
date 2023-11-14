@@ -69,7 +69,7 @@ function ItemAvailabilityEdit({ status, setStatus, warehouses, quantity, setQuan
                         className='item-availability__input item-availability__input--select'
                         name="warehouseName"
                         id="warehouseName"
-                        defaultValue={warehouseName}
+                        value={warehouseName}
                         onChange={handleChangeWarehouse}
                     >
                     

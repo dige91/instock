@@ -57,6 +57,7 @@ function ItemAvailability({ status, setStatus, warehouses, quantity, setQuantity
 
                 <label className='item-availability__label' htmlFor='warehouse'>Warehouse</label>
                 <select className='item-availability__input item-availability__input--select' name="warehouse" onChange={handleChangeWarehouse}>
+                    <option value='' disabled selected>Please select</option>
                     {
                         warehouses?.map((warehouse) => {
                             return (
